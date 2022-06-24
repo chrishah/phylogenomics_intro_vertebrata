@@ -1,5 +1,5 @@
 species,download_link
-Protopterus_annectens
+Protopterus_annectens,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/019/279/795/GCF_019279795.1_PAN1.0/GCF_019279795.1_PAN1.0_protein.faa.gz
 Amblyraja_radiata,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/010/909/765/GCA_010909765.2_sAmbRad1.1.pri/GCA_010909765.2_sAmbRad1.1.pri_genomic.fna.gz
 Anolis_carolinensis,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/090/745/GCA_000090745.2_AnoCar2.0/GCA_000090745.2_AnoCar2.0_genomic.fna.gz
 Callorhinchus_milii,https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/165/045/GCA_000165045.2_Callorhinchus_milii-6.1.3/GCA_000165045.2_Callorhinchus_milii-6.1.3_genomic.fna.gz
