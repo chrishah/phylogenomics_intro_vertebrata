@@ -253,6 +253,7 @@ The main things you need are:
  - config file `data/config.vertebrata_minimal.yaml`
  - sample file `data/vertebrata_minimal.csv`
 
+A few steps were already run for you - see the file `data/preparation.md`
 
 ```bash
 
