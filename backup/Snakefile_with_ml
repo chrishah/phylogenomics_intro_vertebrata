@@ -1,0 +1,37 @@
+
+rule align:
+	input:
+		"by_gene/raw/{id}_all.fas"
+	output:
+		"auto/aligned/{id}.clustalo.fasta"
+	singularity:
+		"docker://chrishah/clustalo-docker:1.2.4"
+	threads: 2
+	shell:
+		"""
+		clustalo -i {input} -o {output}
+		"""
+rule trim:
+	input:
+		"auto/aligned/{id}.clustalo.fasta"
+	output:
+		"auto/trimmed/{id}.clustalo.trimal.fasta"
+	singularity:
+		"docker://reslp/trimal:1.4.1"
+	threads: 2
+	shell:
+		"""
+		trimal -in {input} -out {output}
+		"""
+rule ml:
+	input:
+		expand("auto/trimmed/{id}.clustalo.trimal.fasta", id=["193525at7742", "332227at7742", "33940at7742"])
+	output:
+		"super.treefile"
+	singularity:
+		"docker://reslp/iqtree:2.0.7"
+	threads: 2
+	shell:
+		"""
+		iqtree -s auto/trimmed/ --prefix super -m MFP --seqtype AA -T 2 -bb 1000
+		"""
