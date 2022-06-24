@@ -1,0 +1,11 @@
+Settings:
+cutoff:  0.5
+minsp:  20
+type:  aa
+outdir:  results/orthology/busco/busco_sequences/5-5
+batchID: 5 / 5
+Original number of species: 25
+Species remaining after applying cutoff: 25
+Processing: 404316at7742
+Processing: 332227at7742
+Processing: 193525at7742

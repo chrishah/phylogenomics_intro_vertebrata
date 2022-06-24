@@ -1,0 +1,88 @@
+# general settings:
+species: data/all_fungi_test.csv
+email: "your.email@domain.com" #this is used during genome download to communicate with the NCBI database.
+concurrency: 3 # certain steps can be divided into batches to speed up computation. Here you can give the number of batches.
+seed: #(optional) random seed number to increase reproducibility of iqtree and raxml runs. default: none (=random).
+ 
+# settings related to busco
+busco:
+    set: "fungi_odb9"
+    version: "3.0.2" #possible is "3.0.2" or "5.2.1"
+    mode: "genome"
+    threads: 2
+    augustus_species: "saccharomyces" #Together with BUSCO 5 this is optional and will use augustus instead of metaeuk. Mandatory for BUSCO 3 (there is no metaeuk)
+    additional_parameters: ""
+
+# Setting filtering options for orthology and alignments:
+# ---- Orthology results can be filtered based on two settings cutoff and minsp: ----
+# cutoff = the minimum proportion of single-copy BUSCO sequences a sample needs to have for it to be included in subsequent analysis. Default: 0.5 (50% single copy BUSCOs)
+# minsp = the minimum number of samples which need to have a specific BUSCO gene for the gene to be included in subsequent analysis. Default: 3 (at least three species need to have the gene)
+# ---- Trimmed alignments can be additionally filtered ----
+# dupseq = occasionally BUSCO will find more than one sequence for a single-copy BUSCO gene. With dupseq you can decide how this is handeled. dupseq="persample" for each busco filter out the samples with duplicated sequences. dubseq="perfile" filters out the BUSCO sequence file for that gene.
+# min_parsimony_sites = the minimum number of parsiomony informative sites a trimmed alignment needs to have for it to be included in tree calculation.
+
+exclude_orthology: 
+
+filtering:
+    concurrency: 50
+    dupseq: "persample"
+    cutoff: 0.05
+    minsp: 2
+    seq_type: "aa"
+    min_parsimony_sites: 200
+    bootstrap_cutoff: [0] # Minimum mean Bootstrap support gene trees need to have to be included in the species tree. Default: 0 = No cutoff (all trees will be included)
+
+# settings related to alignment and trimming
+alignment:
+    method: ["mafft", "clustalo"]
+    threads: 8
+    mafft_parameters: "--quiet --auto"
+    clustalo_parameters: 
+    muscle_parameters: 
+
+# possible trimming options: trimal, aliscore
+trimming: 
+    method: ["trimal", "aliscore"] 
+    trimal_parameters: "-gappyout"
+    aliscore_parameters:
+
+# settings related to phylogenetic inference
+# phylogenetic method options include iqtree, raxmlng for a concatenated (supermatrix) reconstruction  and astral for species tree reconstruction
+
+modeltest:
+    method: ["iqtree"]
+    threads: 5
+
+genetree:
+    method: ["iqtree"]
+    bootstrap: 1000
+    threads: 5
+
+speciestree:
+    method: "astral"
+    include: #"data/trees_to_include.txt"
+    bootstrap_cutoff: # Minimum mean Bootstrap support gene trees need to have to be included in the species tree. Default: No cutoff (all trees will be included)
+
+
+tree:
+    method: ["iqtree", "raxml"]
+
+# specific settings for individual tree reconstruction methods
+iqtree:
+    threads: 96 #specifies the maximum number of threads for -ntmax. The real number will be determined with -nt AUTO internally.
+    bootstrap: 1000
+    model: "MFP"
+    additional_params: ""
+
+raxmlng:
+    threads: 96
+    bootstrap: 100
+    additional_params: ""
+
+# phylobayes is currently not working
+phylobayes:
+    threads: 30
+    model: ""
+    ngens: 100
+    additional_params: "-f"
+    nchains: 4

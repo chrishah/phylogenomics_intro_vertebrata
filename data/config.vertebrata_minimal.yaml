@@ -1,0 +1,83 @@
+species: "data/vertebrata_minimal.csv"
+
+email: "christoph.hahn@uni-graz.at" #this is used during genome download to communicate with the NCBI database.
+concurrency: 5 # certain steps can be divided into batches to speed up computation. Here you can give the number of batches.
+seed: 42 #(optional) random seed number to increase reproducibility of iqtree and raxml runs. default: none (=random).
+
+# settings realted to busco
+busco:
+    set: "vertebrata_odb10"
+    version: "5.2.1" #possible is "3.0.2" or "5.2.1"
+    mode: "genome"
+    threads: 10
+    augustus_species: "human"
+    additional_parameters: ""
+
+# Setting filtering options for orthology and alignments:
+# ---- Orthology results can be filtered based on two settings cutoff and minsp: ----
+# cutoff = the minimum proportion of single-copy BUSCO sequences a sample needs to have for it to be included in subsequent analysis. Default: 0.5 (50% single copy BUSCOs)
+# minsp = the minimum number of samples which need to have a specific BUSCO gene for the gene to be included in subsequent analysis. Default: 3 (at least three species need to have the gene)
+# ---- Trimmed alignments can be additionally filtered ----
+# dupseq = occasionally BUSCO will find more than one sequence for a single-copy BUSCO gene. With dupseq you can decide how this is handeled. dupseq="persample" for each busco filter out the samples with duplicated sequences. dubseq="perfile" filters out the BUSCO sequence file for that gene.
+# min_parsimony_sites = the minimum number of parsiomony informative sites a trimmed alignment needs to have for it to be included in tree calculation.
+
+exclude_orthology: ""
+
+filtering:
+    dupseq: "persample"
+    cutoff: 0.5
+    minsp: 20
+    seq_type: "aa"
+    min_parsimony_sites: 50
+    bootstrap_cutoff: [0,50,60,70,80] # Minimum mean Bootstrap support gene trees need to have to be included in the species tree. Default: 0 = No cutoff (all trees will be included)
+
+# settings related to alignment and trimming
+alignment:
+    method: ["clustalo"] #,'mafft', 'muscle'
+    threads: 2
+    mafft_parameters: "--quiet --auto --anysymbol"
+    clustalo_parameters: 
+    muscle_parameters: 
+# possible trimming options: trimal, aliscore
+trimming: 
+    method: ["trimal"] #,'aliscore'
+    trimal_parameters: "-gappyout"
+    aliscore_parameters:
+
+# settings related to phylogenetic inference
+# phylogenetic method options include iqtree, raxmlng for a concatenated (supermatrix) reconstruction  and astral for species tree reconstruction
+
+modeltest:
+    method: ["iqtree"]
+    threads: 10
+    additional_params: "" #e.g. -redo
+
+genetree:
+    method: ["iqtree"]
+    bootstrap: 1000
+    threads: 10
+
+speciestree:
+    method: "astral"
+    include: #"data/trees_to_include.txt"
+
+
+tree:
+    method: ["iqtree"]
+
+# specific settings for individual tree reconstruction methods
+iqtree:
+    threads: 2 #specifies the maximum number of threads for -ntmax. The real number will be determined with -nt AUTO internally.
+    bootstrap: 1000
+    model: "MFP"
+    additional_params: ""
+    maxmem: "" #this flag limits ram usage for iqtree: eg. 64G, default (empty quotes is all available mem)
+raxmlng:
+    threads: 2
+    bootstrap: 100
+    additional_params: ""
+
+# setting realted to the analysis report
+report:
+    width: 80
+    height: 10

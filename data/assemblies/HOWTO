@@ -1,0 +1,3 @@
+#Download Protopterus annections protein complement
+wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/019/279/795/GCF_019279795.1_PAN1.0/GCF_019279795.1_PAN1.0_protein.faa.gz
+gunzip GCF_019279795.1_PAN1.0_protein.faa.gz

@@ -1,0 +1,24 @@
+# BUSCO version is: 5.2.1 
+# The lineage dataset is: vertebrata_odb10 (Creation date: 2021-02-19, number of genomes: 67, number of BUSCOs: 3354)
+# Summarized benchmarking in BUSCO notation for file /gpfs/data/fs71312/hahnc/WORKFLOWS/temp/branch/phylociraptor/.snakemake/shadow/tmpkqiz4042/Petromyzon_marinus.fna
+# BUSCO was run in mode: genome
+# Gene predictor used: augustus
+
+	***** Results: *****
+
+	C:69.6%[S:67.8%,D:1.8%],F:5.8%,M:24.6%,n:3354	   
+	2334	Complete BUSCOs (C)			   
+	2275	Complete and single-copy BUSCOs (S)	   
+	59	Complete and duplicated BUSCOs (D)	   
+	193	Fragmented BUSCOs (F)			   
+	827	Missing BUSCOs (M)			   
+	3354	Total BUSCO groups searched		   
+
+Dependencies and versions:
+	hmmsearch: 3.1
+	makeblastdb: 2.11.0+
+	tblastn: 2.11.0+
+	augustus: 3.4.0
+	gff2gbSmallDNA.pl: None
+	new_species.pl: None
+	etraining: None

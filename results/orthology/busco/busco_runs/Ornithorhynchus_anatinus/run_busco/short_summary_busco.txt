@@ -1,0 +1,19 @@
+# BUSCO version is: 5.2.1 
+# The lineage dataset is: vertebrata_odb10 (Creation date: 2021-02-19, number of genomes: 67, number of BUSCOs: 3354)
+# Summarized benchmarking in BUSCO notation for file /gpfs/data/fs71312/hahnc/WORKFLOWS/temp/branch/phylociraptor/.snakemake/shadow/tmpvtwmm9rj/Ornithorhynchus_anatinus.fna
+# BUSCO was run in mode: genome
+# Gene predictor used: metaeuk
+
+	***** Results: *****
+
+	C:92.8%[S:91.7%,D:1.1%],F:4.2%,M:3.0%,n:3354	   
+	3111	Complete BUSCOs (C)			   
+	3075	Complete and single-copy BUSCOs (S)	   
+	36	Complete and duplicated BUSCOs (D)	   
+	141	Fragmented BUSCOs (F)			   
+	102	Missing BUSCOs (M)			   
+	3354	Total BUSCO groups searched		   
+
+Dependencies and versions:
+	hmmsearch: 3.1
+	metaeuk: 4.a0f584d

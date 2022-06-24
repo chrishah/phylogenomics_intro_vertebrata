@@ -1,0 +1,24 @@
+# BUSCO version is: 5.2.1 
+# The lineage dataset is: vertebrata_odb10 (Creation date: 2021-02-19, number of genomes: 67, number of BUSCOs: 3354)
+# Summarized benchmarking in BUSCO notation for file /gpfs/data/fs71312/hahnc/WORKFLOWS/temp/branch/phylociraptor/.snakemake/shadow/tmph_mtonb7/Takifugu_rubripes.fna
+# BUSCO was run in mode: genome
+# Gene predictor used: augustus
+
+	***** Results: *****
+
+	C:95.3%[S:93.0%,D:2.3%],F:2.2%,M:2.5%,n:3354	   
+	3197	Complete BUSCOs (C)			   
+	3120	Complete and single-copy BUSCOs (S)	   
+	77	Complete and duplicated BUSCOs (D)	   
+	73	Fragmented BUSCOs (F)			   
+	84	Missing BUSCOs (M)			   
+	3354	Total BUSCO groups searched		   
+
+Dependencies and versions:
+	hmmsearch: 3.1
+	makeblastdb: 2.11.0+
+	tblastn: 2.11.0+
+	augustus: 3.4.0
+	gff2gbSmallDNA.pl: None
+	new_species.pl: None
+	etraining: None

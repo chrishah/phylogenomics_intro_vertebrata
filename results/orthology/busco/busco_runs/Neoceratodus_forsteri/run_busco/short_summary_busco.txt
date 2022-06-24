@@ -1,0 +1,19 @@
+# BUSCO version is: 5.2.1 
+# The lineage dataset is: vertebrata_odb10 (Creation date: 2021-02-19, number of genomes: 67, number of BUSCOs: 3354)
+# Summarized benchmarking in BUSCO notation for file /binfl/lv71312/hahnc/Neoceratodus_forsteri_vsc3/Neoceratodus_forsteri.fna
+# BUSCO was run in mode: genome
+# Gene predictor used: metaeuk
+
+	***** Results: *****
+
+	C:64.8%[S:62.6%,D:2.2%],F:21.6%,M:13.6%,n:3354	   
+	2176	Complete BUSCOs (C)			   
+	2101	Complete and single-copy BUSCOs (S)	   
+	75	Complete and duplicated BUSCOs (D)	   
+	723	Fragmented BUSCOs (F)			   
+	455	Missing BUSCOs (M)			   
+	3354	Total BUSCO groups searched		   
+
+Dependencies and versions:
+	hmmsearch: 3.1
+	metaeuk: 4.a0f584d

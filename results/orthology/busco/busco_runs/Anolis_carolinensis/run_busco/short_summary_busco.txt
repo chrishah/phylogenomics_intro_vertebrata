@@ -1,0 +1,24 @@
+# BUSCO version is: 5.2.1 
+# The lineage dataset is: vertebrata_odb10 (Creation date: 2021-02-19, number of genomes: 67, number of BUSCOs: 3354)
+# Summarized benchmarking in BUSCO notation for file /gpfs/data/fs71312/hahnc/WORKFLOWS/temp/branch/phylociraptor/.snakemake/shadow/tmp07sjk432/Anolis_carolinensis.fna
+# BUSCO was run in mode: genome
+# Gene predictor used: augustus
+
+	***** Results: *****
+
+	C:86.0%[S:85.3%,D:0.7%],F:5.0%,M:9.0%,n:3354	   
+	2883	Complete BUSCOs (C)			   
+	2861	Complete and single-copy BUSCOs (S)	   
+	22	Complete and duplicated BUSCOs (D)	   
+	169	Fragmented BUSCOs (F)			   
+	302	Missing BUSCOs (M)			   
+	3354	Total BUSCO groups searched		   
+
+Dependencies and versions:
+	hmmsearch: 3.1
+	makeblastdb: 2.11.0+
+	tblastn: 2.11.0+
+	augustus: 3.4.0
+	gff2gbSmallDNA.pl: None
+	new_species.pl: None
+	etraining: None

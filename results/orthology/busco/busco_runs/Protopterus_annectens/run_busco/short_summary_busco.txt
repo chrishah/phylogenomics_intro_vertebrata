@@ -1,0 +1,17 @@
+# BUSCO version is: 5.2.1 
+# The lineage dataset is: vertebrata_odb10 (Creation date: 2021-02-19, number of genomes: 67, number of BUSCOs: 3354)
+# Summarized benchmarking in BUSCO notation for file /gpfs/data/fs71312/hahnc/WORKFLOWS/temp/branch/phylociraptor/.snakemake/shadow/tmpi2ynkm1g/results/assemblies/Protopterus_annectens.fna
+# BUSCO was run in mode: proteins
+
+	***** Results: *****
+
+	C:94.2%[S:60.5%,D:33.7%],F:3.1%,M:2.7%,n:3354	   
+	3159	Complete BUSCOs (C)			   
+	2029	Complete and single-copy BUSCOs (S)	   
+	1130	Complete and duplicated BUSCOs (D)	   
+	105	Fragmented BUSCOs (F)			   
+	90	Missing BUSCOs (M)			   
+	3354	Total BUSCO groups searched		   
+
+Dependencies and versions:
+	hmmsearch: 3.1

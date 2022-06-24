@@ -1,0 +1,85 @@
+#Download Protopterus annections protein complement
+wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/019/279/795/GCF_019279795.1_PAN1.0/GCF_019279795.1_PAN1.0_protein.faa.gz
+
+#run setup
+./phylociraptor setup -t serial=3 --config-file data/config.vertebrata_minimal.yaml --verbose
+
+#reduce busco set to only 20 busco genes
+./modify_busco.sh
+
+#orthology
+./phylociraptor orthology -t serial=3 --config-file data/config.vertebrata_minimal.yaml --verbose
+
+#cleanup
+rm -rf $(find ./results/orthology/busco/busco_runs/ -name "softw*")
+rm ./results/orthology/busco/busco_runs/Latimeria_chalumnae/run_busco/hmmer_output.tar.gz
+rm results/orthology/busco/busco_runs/Latimeria_chalumnae/run_busco/augustus_output.tar.gz
+rm results/orthology/busco/busco_runs/Latimeria_chalumnae/run_busco/blast_output.tar.gz
+
+#filter-orthology
+./phylociraptor filter-orthology -t serial=3 --config-file data/config.vertebrata_minimal.yaml --verbose
+
+#align
+./phylociraptor align -t serial=3 --config-file data/config.vertebrata_minimal.yaml --verbose
+
+#filter align
+./phylociraptor filter-align -t serial=3 --config-file data/config.vertebrata_minimal.yaml --verbose
+
+#modeltest
+./phylociraptor modeltest -t serial=3 --config-file data/config.vertebrata_minimal.yaml
+
+#ml tree
+./phylociraptor mltree -t serial=8 --config-file data/config.vertebrata_minimal.yaml --verbose
+
+#speciestree
+./phylociraptor speciestree -t serial=8 --config-file data/config.vertebrata_minimal.yaml --verbose
+
+#figure
+./phylociraptor report --config-file data/config.vertebrata_minimal.yaml 
+./phylociraptor report --figure --config-file data/config.vertebrata_minimal.yaml
+
+#manual
+#summarize busco results
+singularity exec docker://reslp/biopython_plus:1.77 bin/extract_busco_table.py --hmm results/orthology/busco/busco_set/vertebrata_odb10/hmms --busco_results results/orthology/busco/busco_runs/ -o busco_table.tsv
+
+mkdir -p by_gene/raw
+singularity exec docker://reslp/biopython_plus:1.77 bin/create_sequence_files.py --busco_table busco_table.tsv --busco_results results/orthology/busco/busco_runs --cutoff 0.5 --outdir by_gene/raw --minsp 20 --type aa --gene_statistics gene_stats.txt --genome_statistics genome_statistics.txt
+
+#do 409625at7742
+mkdir by_gene/aligned
+singularity exec docker://reslp/clustalo:1.2.4 clustalo -i by_gene/raw/409625at7742_all.fas -o by_gene/aligned/409625at7742.clustalo.fasta --threads=2
+
+mkdir by_gene/trimmed
+singularity exec docker://reslp/trimal:1.4.1 trimal -in by_gene/aligned/409625at7742.clustalo.fasta -out by_gene/trimmed/409625at7742.clustalo.trimal.fasta -gappyout
+
+#now let's do for some genes
+for gene in $(echo "359032at7742 413149at7742 409719at7742 406935at7742")
+do
+	echo -e "\n$(date)\t$gene"
+	echo -e "$(date)\taligning"
+	singularity exec docker://reslp/clustalo:1.2.4 clustalo -i by_gene/raw/${gene}_all.fas -o by_gene/aligned/${gene}.clustalo.fasta --threads=2
+	echo -e "$(date)\ttrimming"
+	singularity exec docker://reslp/trimal:1.4.1 trimal -in by_gene/aligned/${gene}.clustalo.fasta -out by_gene/trimmed/${gene}.clustalo.trimal.fasta -gappyout
+	echo -e "$(date)\tDone"
+done
+
+#run iqtree
+singularity exec docker://reslp/iqtree:2.0.7 iqtree -s by_gene/trimmed/ --prefix five_genes -m MFP --seqtype AA -T 2 -bb 1000
+
+### this has been run for you
+#run setup
+./phylociraptor setup -t serial=3 --config-file data/config.vertebrata_minimal.yaml --verbose
+
+#reduce busco set to only 20 busco genes
+./modify_busco.sh
+
+#orthology
+./phylociraptor orthology -t serial=3 --snakemake="--until busco" --config-file data/config.vertebrata_minimal.yaml --verbose --dry
+
+#cleanup
+rm -rf $(find ./results/orthology/busco/busco_runs/ -name "softw*")
+
+#########
+
+## in course
+./phylociraptor orthology -t serial=3 --config-file data/config.vertebrata_minimal.yaml

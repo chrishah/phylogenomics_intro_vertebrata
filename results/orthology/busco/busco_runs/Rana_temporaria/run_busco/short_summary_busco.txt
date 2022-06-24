@@ -1,0 +1,19 @@
+# BUSCO version is: 5.2.1 
+# The lineage dataset is: vertebrata_odb10 (Creation date: 2021-02-19, number of genomes: 67, number of BUSCOs: 3354)
+# Summarized benchmarking in BUSCO notation for file /gpfs/data/fs71312/hahnc/WORKFLOWS/temp/branch/phylociraptor/.snakemake/shadow/tmpb3tcl2ia/Rana_temporaria.fna
+# BUSCO was run in mode: genome
+# Gene predictor used: metaeuk
+
+	***** Results: *****
+
+	C:94.3%[S:92.1%,D:2.2%],F:2.3%,M:3.4%,n:3354	   
+	3162	Complete BUSCOs (C)			   
+	3088	Complete and single-copy BUSCOs (S)	   
+	74	Complete and duplicated BUSCOs (D)	   
+	76	Fragmented BUSCOs (F)			   
+	116	Missing BUSCOs (M)			   
+	3354	Total BUSCO groups searched		   
+
+Dependencies and versions:
+	hmmsearch: 3.1
+	metaeuk: 4.a0f584d

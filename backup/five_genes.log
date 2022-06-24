@@ -1,0 +1,374 @@
+IQ-TREE multicore version 2.0.7 for Linux 64-bit built Jun 17 2020
+Developed by Bui Quang Minh, Nguyen Lam Tung, Olga Chernomor,
+Heiko Schmidt, Dominik Schrempf, Michael Woodhams.
+
+Host:    IT010214.pers.ad.uni-graz.at (AVX2, FMA3, 1007 GB RAM)
+Command: iqtree -s by_gene/trimmed/ --prefix five_genes -m MFP --seqtype AA -T 2 -bb 1000
+Seed:    723282 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Fri Jun 24 10:23:08 2022
+Kernel:  AVX+FMA - 2 threads (8 CPU cores detected)
+
+Reading 5 alignment files in directory by_gene/trimmed/
+Reading alignment file by_gene/trimmed/359032at7742.clustalo.trimal.fasta ... Fasta format detected
+Alignment most likely contains protein sequences
+Alignment has 25 sequences with 254 columns, 240 distinct patterns
+168 parsimony-informative, 62 singleton sites, 24 constant sites
+                          Gap/Ambiguity  Composition  p-value
+   1  Canis_lupus                18.11%    passed     98.94%
+   2  Amblyraja_radiata          33.07%    passed     98.32%
+   3  Notamacropus_eugenii       31.50%    passed     76.86%
+   4  Eptatretus_burgeri         36.61%    passed     83.04%
+   5  Takifugu_rubripes          14.57%    passed     98.40%
+   6  Xenopus_tropicalis         13.39%    passed     98.65%
+   7  Neoceratodus_forsteri      32.68%    passed     99.38%
+   8  Gallus_gallus              21.65%    passed     94.94%
+   9  Latimeria_chalumnae         5.12%    passed    100.00%
+  10  Homo_sapiens               25.98%    passed     59.98%
+  11  Oreochromis_niloticus       6.30%    passed     64.90%
+  12  Mus_musculus               23.23%    passed     93.74%
+  13  Anolis_carolinensis         8.66%    passed     99.40%
+  14  Petromyzon_marinus         20.47%    failed      4.21%
+  15  Scyliorhinus_canicula      29.53%    passed     71.03%
+  16  Taeniopygia_guttata        15.35%    passed     99.98%
+  17  Dasypus_novemcinctus        7.09%    passed     95.02%
+  18  Danio_kyathit              14.57%    passed     55.80%
+  19  Ornithorhynchus_anatinus   32.68%    failed      0.09%
+  20  Rana_temporaria            13.39%    passed     48.43%
+  21  Callorhinchus_milii        28.74%    passed     74.64%
+  22  Protopterus_annectens      16.54%    passed     96.73%
+  23  Monodelphis_domestica       3.54%    passed     80.15%
+  24  Meleagris_gallopavo        24.02%    passed     92.80%
+  25  Loxodonta_africana         20.47%    passed     89.66%
+****  TOTAL                      19.89%  2 sequences failed composition chi2 test (p-value<5%; df=19)
+Reading alignment file by_gene/trimmed/406935at7742.clustalo.trimal.fasta ... Fasta format detected
+Alignment most likely contains protein sequences
+Alignment has 25 sequences with 204 columns, 197 distinct patterns
+149 parsimony-informative, 35 singleton sites, 20 constant sites
+                          Gap/Ambiguity  Composition  p-value
+   1  Canis_lupus                 0.98%    passed     93.46%
+   2  Amblyraja_radiata           8.82%    passed     35.27%
+   3  Notamacropus_eugenii       29.41%    passed     98.10%
+   4  Eptatretus_burgeri         34.80%    passed     80.17%
+   5  Takifugu_rubripes          11.27%    passed     96.17%
+   6  Xenopus_tropicalis          9.31%    passed     98.85%
+   7  Neoceratodus_forsteri      20.10%    passed     99.67%
+   8  Gallus_gallus               4.41%    passed     89.13%
+   9  Latimeria_chalumnae         3.92%    passed     85.52%
+  10  Homo_sapiens               12.75%    passed     99.13%
+  11  Oreochromis_niloticus      11.27%    passed     51.90%
+  12  Mus_musculus                0.98%    passed     99.37%
+  13  Anolis_carolinensis         1.96%    passed     56.96%
+  14  Petromyzon_marinus         14.71%    passed     78.64%
+  15  Scyliorhinus_canicula      35.29%    passed     96.23%
+  16  Taeniopygia_guttata         3.92%    passed     94.98%
+  17  Dasypus_novemcinctus        0.98%    passed     85.21%
+  18  Danio_kyathit              11.76%    passed     68.22%
+  19  Ornithorhynchus_anatinus   25.49%    passed     97.32%
+  20  Rana_temporaria            10.78%    passed     87.13%
+  21  Callorhinchus_milii        12.75%    passed     75.42%
+  22  Protopterus_annectens       2.94%    passed     91.89%
+  23  Monodelphis_domestica       0.98%    passed     94.97%
+  24  Meleagris_gallopavo        17.65%    passed     95.30%
+  25  Loxodonta_africana         19.12%    passed     85.44%
+****  TOTAL                      12.25%  0 sequences failed composition chi2 test (p-value<5%; df=19)
+Reading alignment file by_gene/trimmed/409625at7742.clustalo.trimal.fasta ... Fasta format detected
+Alignment most likely contains protein sequences
+Alignment has 25 sequences with 137 columns, 131 distinct patterns
+105 parsimony-informative, 17 singleton sites, 15 constant sites
+                          Gap/Ambiguity  Composition  p-value
+   1  Canis_lupus                 0.00%    passed     96.90%
+   2  Amblyraja_radiata          21.90%    passed     42.87%
+   3  Notamacropus_eugenii        0.00%    passed     98.59%
+   4  Eptatretus_burgeri         22.63%    passed     95.22%
+   5  Takifugu_rubripes           0.73%    passed     99.63%
+   6  Xenopus_tropicalis         11.68%    passed     85.19%
+   7  Neoceratodus_forsteri      11.68%    passed     98.41%
+   8  Gallus_gallus               0.00%    passed     99.98%
+   9  Latimeria_chalumnae         0.00%    passed     97.75%
+  10  Homo_sapiens                0.00%    passed     99.87%
+  11  Oreochromis_niloticus       0.00%    passed     68.55%
+  12  Mus_musculus                0.00%    passed     98.88%
+  13  Anolis_carolinensis         0.00%    passed     91.90%
+  14  Petromyzon_marinus          1.46%    passed     49.69%
+  15  Scyliorhinus_canicula       8.76%    passed     96.74%
+  16  Taeniopygia_guttata         2.19%    passed     98.90%
+  17  Dasypus_novemcinctus        0.00%    passed     98.78%
+  18  Danio_kyathit               0.00%    passed     89.21%
+  19  Ornithorhynchus_anatinus   13.14%    failed      4.91%
+  20  Rana_temporaria             0.00%    passed     99.95%
+  21  Callorhinchus_milii         0.73%    passed     96.91%
+  22  Protopterus_annectens       0.00%    passed     99.10%
+  23  Monodelphis_domestica       0.73%    passed     98.00%
+  24  Meleagris_gallopavo         0.00%    passed     99.99%
+  25  Loxodonta_africana          0.00%    passed     90.68%
+****  TOTAL                       3.82%  1 sequences failed composition chi2 test (p-value<5%; df=19)
+Reading alignment file by_gene/trimmed/409719at7742.clustalo.trimal.fasta ... Fasta format detected
+Alignment most likely contains protein sequences
+Alignment has 25 sequences with 227 columns, 222 distinct patterns
+168 parsimony-informative, 36 singleton sites, 23 constant sites
+                          Gap/Ambiguity  Composition  p-value
+   1  Canis_lupus                 0.88%    failed      3.87%
+   2  Amblyraja_radiata          40.09%    passed     59.74%
+   3  Notamacropus_eugenii        5.29%    passed     23.56%
+   4  Eptatretus_burgeri         45.37%    passed     90.10%
+   5  Takifugu_rubripes          25.11%    passed     58.08%
+   6  Xenopus_tropicalis         12.78%    passed     98.49%
+   7  Neoceratodus_forsteri      40.53%    passed     84.65%
+   8  Gallus_gallus              18.50%    passed     99.14%
+   9  Latimeria_chalumnae         5.29%    passed     77.13%
+  10  Homo_sapiens                4.85%    passed     99.44%
+  11  Oreochromis_niloticus      29.96%    passed     68.90%
+  12  Mus_musculus               13.22%    passed     98.17%
+  13  Anolis_carolinensis         7.05%    passed     63.74%
+  14  Petromyzon_marinus         27.75%    passed     74.09%
+  15  Scyliorhinus_canicula      32.16%    passed     71.74%
+  16  Taeniopygia_guttata        10.57%    passed     69.11%
+  17  Dasypus_novemcinctus        4.41%    passed     74.94%
+  18  Danio_kyathit              10.13%    passed     37.85%
+  19  Ornithorhynchus_anatinus   38.77%    passed     98.34%
+  20  Rana_temporaria            26.87%    passed     99.98%
+  21  Callorhinchus_milii        29.52%    passed     95.05%
+  22  Protopterus_annectens      14.54%    passed     93.06%
+  23  Monodelphis_domestica       5.73%    failed      0.99%
+  24  Meleagris_gallopavo        10.13%    passed     73.75%
+  25  Loxodonta_africana          6.61%    passed     92.59%
+****  TOTAL                      18.64%  2 sequences failed composition chi2 test (p-value<5%; df=19)
+Reading alignment file by_gene/trimmed/413149at7742.clustalo.trimal.fasta ... Fasta format detected
+Alignment most likely contains protein sequences
+Alignment has 25 sequences with 124 columns, 120 distinct patterns
+98 parsimony-informative, 16 singleton sites, 10 constant sites
+                          Gap/Ambiguity  Composition  p-value
+   1  Canis_lupus                 0.00%    failed      3.06%
+   2  Amblyraja_radiata           0.81%    passed     99.49%
+   3  Notamacropus_eugenii        5.65%    passed     53.59%
+   4  Eptatretus_burgeri          3.23%    passed     36.38%
+   5  Takifugu_rubripes           4.84%    passed     63.86%
+   6  Xenopus_tropicalis          0.00%    passed     91.93%
+   7  Neoceratodus_forsteri       6.45%    passed     91.16%
+   8  Gallus_gallus               0.00%    passed     99.79%
+   9  Latimeria_chalumnae         0.00%    passed     21.94%
+  10  Homo_sapiens                0.00%    passed     98.91%
+  11  Oreochromis_niloticus       0.81%    passed     63.03%
+  12  Mus_musculus                0.00%    passed     99.81%
+  13  Anolis_carolinensis         0.00%    passed     99.57%
+  14  Petromyzon_marinus          0.81%    passed     53.64%
+  15  Scyliorhinus_canicula       0.00%    passed     83.02%
+  16  Taeniopygia_guttata         0.81%    passed     94.84%
+  17  Dasypus_novemcinctus        0.00%    passed     99.60%
+  18  Danio_kyathit               0.00%    passed     76.75%
+  19  Ornithorhynchus_anatinus    0.00%    passed     79.82%
+  20  Rana_temporaria             0.00%    passed     99.06%
+  21  Callorhinchus_milii         0.00%    passed     76.15%
+  22  Protopterus_annectens       0.00%    passed     99.53%
+  23  Monodelphis_domestica       0.00%    passed     98.81%
+  24  Meleagris_gallopavo         0.00%    passed     99.96%
+  25  Loxodonta_africana          0.00%    passed     99.91%
+****  TOTAL                       0.94%  1 sequences failed composition chi2 test (p-value<5%; df=19)
+
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.006 seconds
+Perform fast likelihood tree search using LG+I+G model...
+Estimate model parameters (epsilon = 5.000)
+Perform nearest neighbor interchange...
+Estimate model parameters (epsilon = 1.000)
+1. Initial log-likelihood: -28186.103
+Optimal log-likelihood: -28185.856
+Proportion of invariable sites: 0.054
+Gamma shape alpha: 1.012
+Parameters optimization took 1 rounds (0.044 sec)
+Time for fast ML tree search: 0.315 seconds
+
+NOTE: ModelFinder requires 38 MB RAM!
+ModelFinder will test up to 546 protein models (sample size: 946) ...
+ No. Model         -LnL         df  AIC          AICc         BIC
+  1  LG            29545.587    47  59185.174    59190.199    59413.230
+  2  LG+I          29117.154    48  58330.308    58335.552    58563.216
+  3  LG+G4         28193.722    48  56483.444    56488.688    56716.351
+  4  LG+I+G4       28185.731    49  56469.462    56474.931    56707.222
+  5  LG+R2         28394.531    49  56887.062    56892.530    57124.821
+  6  LG+R3         28217.980    51  56537.960    56543.893    56785.424
+  7  LG+R4         28178.923    53  56463.846    56470.264    56721.015
+  8  LG+R5         28164.025    55  56438.051    56444.972    56704.924
+  9  LG+R6         28164.055    57  56442.111    56449.557    56718.688
+ 17  LG+F+I+G4     28146.354    68  56428.707    56439.407    56758.660
+ 21  LG+F+R5       28124.018    74  56396.036    56408.780    56755.102
+ 30  WAG+I+G4      28138.704    49  56375.408    56380.877    56613.168
+ 34  WAG+R5        28124.714    55  56359.428    56366.349    56626.301
+ 43  WAG+F+I+G4    28086.136    68  56308.271    56318.972    56638.224
+ 47  WAG+F+R5      28072.220    74  56292.441    56305.185    56651.507
+ 56  JTT+I+G4      27987.442    49  56072.883    56078.352    56310.643
+ 60  JTT+R5        27973.682    55  56057.365    56064.286    56324.238
+ 69  JTT+F+I+G4    27966.814    68  56069.627    56080.327    56399.580
+ 73  JTT+F+R5      27952.603    74  56053.205    56065.949    56412.271
+ 82  JTTDCMut+I+G4 27995.175    49  56088.351    56093.820    56326.111
+ 86  JTTDCMut+R5   27981.458    55  56072.916    56079.837    56339.789
+ 95  JTTDCMut+F+I+G4 27973.366    68  56082.732    56093.432    56412.685
+ 99  JTTDCMut+F+R5 27959.258    74  56066.517    56079.261    56425.583
+108  DCMut+I+G4    28397.383    49  56892.766    56898.234    57130.525
+112  DCMut+R5      28371.812    55  56853.625    56860.546    57120.498
+121  DCMut+F+I+G4  28254.045    68  56644.089    56654.789    56974.042
+125  DCMut+F+R5    28228.337    74  56604.675    56617.419    56963.741
+134  VT+I+G4       28120.137    49  56338.274    56343.743    56576.034
+138  VT+R5         28107.902    55  56325.805    56332.726    56592.678
+147  VT+F+I+G4     28083.740    68  56303.480    56314.180    56633.433
+151  VT+F+R5       28071.305    74  56290.610    56303.354    56649.676
+160  PMB+I+G4      28309.814    49  56717.628    56723.097    56955.388
+164  PMB+R5        28300.877    55  56711.755    56718.676    56978.628
+173  PMB+F+I+G4    28319.432    68  56774.863    56785.564    57104.816
+177  PMB+F+R5      28310.023    74  56768.045    56780.789    57127.111
+186  Blosum62+I+G4 28411.840    49  56921.680    56927.149    57159.440
+190  Blosum62+R5   28400.931    55  56911.863    56918.784    57178.736
+199  Blosum62+F+I+G4 28377.719    68  56891.438    56902.139    57221.391
+203  Blosum62+F+R5 28366.554    74  56881.109    56893.853    57240.175
+212  Dayhoff+I+G4  28397.350    49  56892.700    56898.169    57130.460
+216  Dayhoff+R5    28371.782    55  56853.565    56860.486    57120.438
+225  Dayhoff+F+I+G4 28254.268    68  56644.536    56655.236    56974.489
+229  Dayhoff+F+R5  28228.548    74  56605.095    56617.839    56964.161
+238  mtREV+I+G4    29604.482    49  59306.964    59312.433    59544.724
+242  mtREV+R5      29563.928    55  59237.856    59244.777    59504.729
+251  mtREV+F+I+G4  28548.604    68  57233.208    57243.908    57563.160
+255  mtREV+F+R5    28508.516    74  57165.032    57177.776    57524.098
+264  mtART+I+G4    30163.078    49  60424.156    60429.625    60661.916
+268  mtART+R5      30089.896    55  60289.791    60296.712    60556.664
+277  mtART+F+I+G4  29103.020    68  58342.041    58352.741    58671.993
+281  mtART+F+R5    29023.414    74  58194.828    58207.572    58553.894
+290  mtZOA+I+G4    29379.872    49  58857.743    58863.212    59095.503
+294  mtZOA+R5      29330.858    55  58771.717    58778.638    59038.590
+303  mtZOA+F+I+G4  28681.935    68  57499.869    57510.569    57829.822
+307  mtZOA+F+R5    28618.136    74  57384.271    57397.015    57743.337
+316  mtMet+I+G4    29616.508    49  59331.016    59336.484    59568.776
+320  mtMet+R5      29590.415    55  59290.830    59297.751    59557.703
+329  mtMet+F+I+G4  28432.143    68  57000.285    57010.986    57330.238
+333  mtMet+F+R5    28392.978    74  56933.955    56946.699    57293.021
+342  mtVer+I+G4    29754.810    49  59607.620    59613.089    59845.380
+346  mtVer+R5      29724.851    55  59559.702    59566.624    59826.576
+355  mtVer+F+I+G4  28712.860    68  57561.720    57572.420    57891.672
+359  mtVer+F+R5    28673.687    74  57495.375    57508.119    57854.441
+368  mtInv+I+G4    29859.992    49  59817.985    59823.454    60055.745
+372  mtInv+R5      29841.639    55  59793.278    59800.200    60060.152
+381  mtInv+F+I+G4  28334.827    68  56805.654    56816.354    57135.606
+385  mtInv+F+R5    28300.032    74  56748.065    56760.809    57107.131
+394  mtMAM+I+G4    30149.803    49  60397.606    60403.075    60635.366
+398  mtMAM+R5      30098.005    55  60306.010    60312.932    60572.884
+407  mtMAM+F+I+G4  29068.201    68  58272.401    58283.102    58602.354
+411  mtMAM+F+R5    29017.451    74  58182.902    58195.646    58541.968
+420  HIVb+I+G4     28559.078    49  57216.155    57221.624    57453.915
+424  HIVb+R5       28536.858    55  57183.715    57190.637    57450.589
+433  HIVb+F+I+G4   28445.671    68  57027.343    57038.043    57357.295
+437  HIVb+F+R5     28424.802    74  56997.603    57010.347    57356.669
+446  HIVw+I+G4     29610.141    49  59318.282    59323.750    59556.042
+450  HIVw+R5       29575.422    55  59260.844    59267.765    59527.717
+459  HIVw+F+I+G4   28929.273    68  57994.547    58005.247    58324.499
+463  HIVw+F+R5     28904.092    74  57956.184    57968.927    58315.249
+472  FLU+I+G4      28663.324    49  57424.649    57430.117    57662.408
+476  FLU+R5        28618.557    55  57347.114    57354.036    57613.988
+485  FLU+F+I+G4    28395.575    68  56927.150    56937.850    57257.102
+489  FLU+F+R5      28355.899    74  56859.798    56872.542    57218.864
+498  rtREV+I+G4    28550.131    49  57198.262    57203.731    57436.022
+502  rtREV+R5      28523.597    55  57157.193    57164.115    57424.067
+511  rtREV+F+I+G4  28352.609    68  56841.218    56851.918    57171.171
+515  rtREV+F+R5    28329.311    74  56806.621    56819.365    57165.687
+524  cpREV+I+G4    28301.837    49  56701.674    56707.142    56939.433
+528  cpREV+R5      28277.833    55  56665.667    56672.588    56932.540
+537  cpREV+F+I+G4  28281.920    68  56699.839    56710.539    57029.792
+541  cpREV+F+R5    28256.942    74  56661.884    56674.628    57020.950
+Akaike Information Criterion:           JTT+F+R5
+Corrected Akaike Information Criterion: JTT+R5
+Bayesian Information Criterion:         JTT+I+G4
+Best-fit model: JTT+I+G4 chosen according to BIC
+
+All model information printed to five_genes.model.gz
+CPU time for ModelFinder: 157.329 seconds (0h:2m:37s)
+Wall-clock time for ModelFinder: 78.841 seconds (0h:1m:18s)
+Generating 1000 samples for ultrafast bootstrap (seed: 723282)...
+
+NOTE: 17 MB RAM (0 GB) is required!
+Estimate model parameters (epsilon = 0.100)
+Thoroughly optimizing +I+G parameters from 10 start values...
+Init pinv, alpha: 0.000, 1.118 / Estimate: 0.000, 0.833 / LogL: -27997.606
+Init pinv, alpha: 0.011, 1.118 / Estimate: 0.056, 1.106 / LogL: -27987.481
+Init pinv, alpha: 0.022, 1.118 / Estimate: 0.057, 1.109 / LogL: -27987.464
+Init pinv, alpha: 0.032, 1.118 / Estimate: 0.057, 1.110 / LogL: -27987.460
+Init pinv, alpha: 0.043, 1.118 / Estimate: 0.057, 1.109 / LogL: -27987.462
+Init pinv, alpha: 0.054, 1.118 / Estimate: 0.056, 1.106 / LogL: -27987.475
+Init pinv, alpha: 0.065, 1.118 / Estimate: 0.061, 1.130 / LogL: -27987.432
+Init pinv, alpha: 0.076, 1.118 / Estimate: 0.062, 1.133 / LogL: -27987.447
+Init pinv, alpha: 0.086, 1.118 / Estimate: 0.061, 1.130 / LogL: -27987.443
+Init pinv, alpha: 0.097, 1.118 / Estimate: 0.062, 1.132 / LogL: -27987.447
+Optimal pinv,alpha: 0.061, 1.130 / LogL: -27987.432
+
+Parameters optimization took 3.329 sec
+Computing ML distances based on estimated model parameters... 0.054 sec
+Computing BIONJ tree...
+0.004 seconds
+Log-likelihood of BIONJ tree: -27992.202
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 98 parsimony trees... 0.432 second
+Computing log-likelihood of 98 initial trees ... 1.763 seconds
+Current best score: -27987.432
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 1: -27987.253
+Iteration 10 / LogL: -27989.497 / Time: 0h:0m:8s
+Iteration 20 / LogL: -27987.476 / Time: 0h:0m:10s
+Finish initializing candidate tree set (9)
+Current best tree score: -27987.253 / CPU time: 7.166
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Iteration 30 / LogL: -27987.778 / Time: 0h:0m:13s (0h:0m:33s left)
+Iteration 40 / LogL: -27987.625 / Time: 0h:0m:16s (0h:0m:25s left)
+Iteration 50 / LogL: -27989.297 / Time: 0h:0m:19s (0h:0m:19s left)
+Log-likelihood cutoff on original alignment: -28018.537
+Iteration 60 / LogL: -27987.821 / Time: 0h:0m:21s (0h:0m:15s left)
+Iteration 70 / LogL: -27987.298 / Time: 0h:0m:25s (0h:0m:11s left)
+Iteration 80 / LogL: -27987.817 / Time: 0h:0m:28s (0h:0m:7s left)
+Iteration 90 / LogL: -27987.668 / Time: 0h:0m:31s (0h:0m:3s left)
+Iteration 100 / LogL: -27987.262 / Time: 0h:0m:34s (0h:0m:0s left)
+Log-likelihood cutoff on original alignment: -28018.537
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.999
+TREE SEARCH COMPLETED AFTER 102 ITERATIONS / Time: 0h:0m:35s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+1. Initial log-likelihood: -27987.253
+Optimal log-likelihood: -27987.250
+Proportion of invariable sites: 0.060
+Gamma shape alpha: 1.118
+Parameters optimization took 1 rounds (0.062 sec)
+BEST SCORE FOUND : -27987.250
+Creating bootstrap support values...
+Split supports printed to NEXUS file five_genes.splits.nex
+Total tree length: 12.870
+
+Total number of iterations: 102
+CPU time used for tree search: 63.302 sec (0h:1m:3s)
+Wall-clock time used for tree search: 31.799 sec (0h:0m:31s)
+Total CPU time used: 70.574 sec (0h:1m:10s)
+Total wall-clock time used: 35.448 sec (0h:0m:35s)
+
+Computing bootstrap consensus tree...
+Reading input file five_genes.splits.nex...
+25 taxa and 113 splits.
+Consensus tree written to five_genes.contree
+Reading input trees file five_genes.contree
+Log-likelihood of consensus tree: -27987.921
+
+Analysis results written to: 
+  IQ-TREE report:                five_genes.iqtree
+  Maximum-likelihood tree:       five_genes.treefile
+  Likelihood distances:          five_genes.mldist
+
+Ultrafast bootstrap approximation results written to:
+  Split support values:          five_genes.splits.nex
+  Consensus tree:                five_genes.contree
+  Screen log file:               five_genes.log
+
+Date and Time: Fri Jun 24 10:25:03 2022

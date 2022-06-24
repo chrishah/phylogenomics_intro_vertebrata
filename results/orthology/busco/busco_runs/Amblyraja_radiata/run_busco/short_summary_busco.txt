@@ -1,0 +1,19 @@
+# BUSCO version is: 5.2.1 
+# The lineage dataset is: vertebrata_odb10 (Creation date: 2021-02-19, number of genomes: 67, number of BUSCOs: 3354)
+# Summarized benchmarking in BUSCO notation for file /gpfs/data/fs71312/hahnc/WORKFLOWS/temp/branch/phylociraptor/.snakemake/shadow/tmpvwxoh4zn/Amblyraja_radiata.fna
+# BUSCO was run in mode: genome
+# Gene predictor used: metaeuk
+
+	***** Results: *****
+
+	C:91.5%[S:89.4%,D:2.1%],F:2.9%,M:5.6%,n:3354	   
+	3070	Complete BUSCOs (C)			   
+	2999	Complete and single-copy BUSCOs (S)	   
+	71	Complete and duplicated BUSCOs (D)	   
+	98	Fragmented BUSCOs (F)			   
+	186	Missing BUSCOs (M)			   
+	3354	Total BUSCO groups searched		   
+
+Dependencies and versions:
+	hmmsearch: 3.1
+	metaeuk: 4.a0f584d

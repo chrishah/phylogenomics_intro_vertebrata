@@ -1,0 +1,19 @@
+# BUSCO version is: 5.2.1 
+# The lineage dataset is: vertebrata_odb10 (Creation date: 2021-02-19, number of genomes: 67, number of BUSCOs: 3354)
+# Summarized benchmarking in BUSCO notation for file /gpfs/data/fs71312/hahnc/WORKFLOWS/temp/branch/phylociraptor/.snakemake/shadow/tmpggcpof2w/Scyliorhinus_canicula.fna
+# BUSCO was run in mode: genome
+# Gene predictor used: metaeuk
+
+	***** Results: *****
+
+	C:91.8%[S:88.8%,D:3.0%],F:3.2%,M:5.0%,n:3354	   
+	3079	Complete BUSCOs (C)			   
+	2977	Complete and single-copy BUSCOs (S)	   
+	102	Complete and duplicated BUSCOs (D)	   
+	106	Fragmented BUSCOs (F)			   
+	169	Missing BUSCOs (M)			   
+	3354	Total BUSCO groups searched		   
+
+Dependencies and versions:
+	hmmsearch: 3.1
+	metaeuk: 4.a0f584d
