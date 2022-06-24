@@ -2,13 +2,13 @@
 wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/019/279/795/GCF_019279795.1_PAN1.0/GCF_019279795.1_PAN1.0_protein.faa.gz
 
 #run setup
-./phylociraptor setup -t serial=3 --config-file data/config.vertebrata_minimal.yaml --verbose
+./phylociraptor setup -t serial=2 --config-file data/config.vertebrata_minimal.yaml --verbose
 
 #reduce busco set to only 20 busco genes
 ./modify_busco.sh
 
 #orthology
-./phylociraptor orthology -t serial=3 --config-file data/config.vertebrata_minimal.yaml --verbose
+./phylociraptor orthology -t serial=2 --config-file data/config.vertebrata_minimal.yaml --verbose
 
 #cleanup
 rm -rf $(find ./results/orthology/busco/busco_runs/ -name "softw*")
@@ -17,22 +17,22 @@ rm results/orthology/busco/busco_runs/Latimeria_chalumnae/run_busco/augustus_out
 rm results/orthology/busco/busco_runs/Latimeria_chalumnae/run_busco/blast_output.tar.gz
 
 #filter-orthology
-./phylociraptor filter-orthology -t serial=3 --config-file data/config.vertebrata_minimal.yaml --verbose
+./phylociraptor filter-orthology -t serial=2 --config-file data/config.vertebrata_minimal.yaml --verbose
 
 #align
-./phylociraptor align -t serial=3 --config-file data/config.vertebrata_minimal.yaml --verbose
+./phylociraptor align -t serial=2 --config-file data/config.vertebrata_minimal.yaml --verbose
 
 #filter align
-./phylociraptor filter-align -t serial=3 --config-file data/config.vertebrata_minimal.yaml --verbose
+./phylociraptor filter-align -t serial=2 --config-file data/config.vertebrata_minimal.yaml --verbose
 
 #modeltest
-./phylociraptor modeltest -t serial=3 --config-file data/config.vertebrata_minimal.yaml
+./phylociraptor modeltest -t serial=2 --config-file data/config.vertebrata_minimal.yaml
 
 #ml tree
-./phylociraptor mltree -t serial=8 --config-file data/config.vertebrata_minimal.yaml --verbose
+./phylociraptor mltree -t serial=2 --config-file data/config.vertebrata_minimal.yaml --verbose
 
 #speciestree
-./phylociraptor speciestree -t serial=8 --config-file data/config.vertebrata_minimal.yaml --verbose
+./phylociraptor speciestree -t serial=2 --config-file data/config.vertebrata_minimal.yaml --verbose
 
 #figure
 ./phylociraptor report --config-file data/config.vertebrata_minimal.yaml 
@@ -68,18 +68,46 @@ singularity exec docker://reslp/iqtree:2.0.7 iqtree -s by_gene/trimmed/ --prefix
 
 ### this has been run for you
 #run setup
-./phylociraptor setup -t serial=3 --config-file data/config.vertebrata_minimal.yaml --verbose
+./phylociraptor setup -t serial=2 --config-file data/config.vertebrata_minimal.yaml --verbose
 
 #reduce busco set to only 20 busco genes
 ./modify_busco.sh
 
 #orthology
-./phylociraptor orthology -t serial=3 --snakemake="--until busco" --config-file data/config.vertebrata_minimal.yaml --verbose --dry
+./phylociraptor orthology -t serial=2 --snakemake="--until busco" --config-file data/config.vertebrata_minimal.yaml --verbose --dry
 
 #cleanup
 rm -rf $(find ./results/orthology/busco/busco_runs/ -name "softw*")
+rm ./results/orthology/busco/busco_runs/Latimeria_chalumnae/run_busco/hmmer_output.tar.gz
+rm results/orthology/busco/busco_runs/Latimeria_chalumnae/run_busco/augustus_output.tar.gz
+rm results/orthology/busco/busco_runs/Latimeria_chalumnae/run_busco/blast_output.tar.gz
 
 #########
 
 ## in course
-./phylociraptor orthology -t serial=3 --config-file data/config.vertebrata_minimal.yaml
+#get table
+./phylociraptor orthology -t serial=2 --config-file data/config.vertebrata_minimal.yaml
+
+#filter-orthology
+./phylociraptor filter-orthology -t serial=2 --config-file data/config.vertebrata_minimal.yaml --verbose
+
+#align
+./phylociraptor align -t serial=2 --config-file data/config.vertebrata_minimal.yaml --verbose
+
+#filter align
+./phylociraptor filter-align -t serial=2 --config-file data/config.vertebrata_minimal.yaml --verbose
+
+#modeltest
+./phylociraptor modeltest -t serial=2 --config-file data/config.vertebrata_minimal.yaml
+
+#ml tree
+./phylociraptor mltree -t serial=2 --config-file data/config.vertebrata_minimal.yaml --verbose
+
+#speciestree
+./phylociraptor speciestree -t serial=2 --config-file data/config.vertebrata_minimal.yaml --verbose
+
+#figure
+./phylociraptor report --config-file data/config.vertebrata_minimal.yaml 
+./phylociraptor report --figure --config-file data/config.vertebrata_minimal.yaml
+
+
