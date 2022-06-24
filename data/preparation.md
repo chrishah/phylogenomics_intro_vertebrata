@@ -8,7 +8,7 @@ These steps were run in preparation for this repository.
 ./modify_busco.sh
 
 #orthology
-./phylociraptor orthology -t serial=2 --config-file data/config.vertebrata_minimal.yaml --verbose
+./phylociraptor orthology -t serial=2 --snakemake="--until busco" --config-file data/config.vertebrata_minimal.yaml --verbose
 
 #cleanup (just to save some space on Github)
 rm -rf $(find ./results/orthology/busco/busco_runs/ -name "softw*")
