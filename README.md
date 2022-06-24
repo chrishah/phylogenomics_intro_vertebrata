@@ -242,4 +242,43 @@ Actually, running would happen if you remove the `-n` flag.
 
 Have fun playing around with this for a while ;-)
 
- 
+__6.) Full automation__
+
+
+We are working on a pipeline for automating the entire process of phylogenomic analyses from BUSCO genes (for now). You can find it [here](https://github.com/reslp/phylociraptor).
+
+The current repository is actually a snapshot of [phylociraptor](https://github.com/reslp/phylociraptor). In the base directory of this repository you could resume an analysis as shown below. If there is time we'll talk about the setup a little bit.
+
+The main things you need are:
+ - config file `data/config.vertebrata_minimal.yaml`
+ - sample file `data/vertebrata_minimal.csv`
+
+
+```bash
+
+#get table
+./phylociraptor orthology -t serial=2 --config-file data/config.vertebrata_minimal.yaml
+
+#filter-orthology
+./phylociraptor filter-orthology -t serial=2 --config-file data/config.vertebrata_minimal.yaml --verbose
+
+#align
+./phylociraptor align -t serial=2 --config-file data/config.vertebrata_minimal.yaml --verbose
+
+#filter align
+./phylociraptor filter-align -t serial=2 --config-file data/config.vertebrata_minimal.yaml --verbose
+
+#modeltest
+./phylociraptor modeltest -t serial=2 --config-file data/config.vertebrata_minimal.yaml
+
+#ml tree
+./phylociraptor mltree -t serial=2 --config-file data/config.vertebrata_minimal.yaml --verbose
+
+#speciestree
+./phylociraptor speciestree -t serial=2 --config-file data/config.vertebrata_minimal.yaml --verbose
+
+#figure
+./phylociraptor report --config-file data/config.vertebrata_minimal.yaml 
+./phylociraptor report --figure --config-file data/config.vertebrata_minimal.yaml
+
+``` 
