@@ -187,7 +187,59 @@ do
 done
 ```
 
+Now, let's infer an ML tree using a supermatrix of all 5 genes that we have processed so far.
+```bash
+(user@host)-$ singularity exec docker://reslp/iqtree:2.0.7 \
+              iqtree \
+              -s by_gene/trimmed/ \
+              --prefix five_genes \
+              -m MFP --seqtype AA -T 2 -bb 1000 
+``` 
 
- 
+This will run for about 10 Minutes. You can check out the result `five_genes.treefile`, once it's done.
+
+```bash
+(user@host)-$ cat five_genes.treefile
+```
+
+__Congratulations, you've built your first phylogenomic tree!!!__
+
+__5.) Automate the workflow with Snakemake__
+
+A very neat way of handling this kind of thing is [Snakemake](https://snakemake.readthedocs.io/en/stable/).
+
+The repository ships with a file called `Snakefile`. This file contains the instructions for running a basic workflow with Snakemake. Let's have a look.
+
+```bash
+(user@host)-$ less Snakefile #exit less with 'q'
+```
+
+In the Snakefile you'll see 'rules' (that's what individual steps in the analyses are called in the Snakemake world). Some of which should look familiar, because we just ran them manually, and then from within a simple bash script. Filenames etc. are replaced with variables but other than that..
+
+Snakemake is installed on your system. In order run Snakemake you first need to enter a `conda` environment that we've set up. 
+
+```bash
+(user@host)-$ conda activate snakemake
+(snakemake) (user@host)-$ snakemake -h
+```
+
+Now, let's try to do a Snakemake 'dry-run', providing a specific target file and see what happens. 
+
+```bash
+(user@host)-$ snakemake -n -rp auto/trimmed/193525at7742.clustalo.trimal.fasta
+```
+
+
+Now, you could extend the analyses to further genes.
+```bash
+(user@host)-$ snakemake -n -rp auto/trimmed/193525at7742.clustalo.trimal.fasta auto/trimmed/406935at7742.clustalo.trimal.fasta
+```
+
+Actually, running would happen if you remove the `-n` flag. 
+```bash
+(user@host)-$ snakemake -rp --use-singularity auto/trimmed/193525at7742.clustalo.trimal.fasta auto/trimmed/406935at7742.clustalo.trimal.fasta
+```
+
+Have fun playing around with this for a while ;-)
 
  
