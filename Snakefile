@@ -6,10 +6,10 @@ rule align:
 		"auto/aligned/{id}.clustalo.fasta"
 	singularity:
 		"docker://chrishah/clustalo-docker:1.2.4"
-	threads: 2
+	threads: 1
 	shell:
 		"""
-		clustalo -i {input} -o {output}
+		clustalo -i {input} -o {output} --threads={threads}
 		"""
 rule trim:
 	input:

@@ -1,4 +1,18 @@
+IDS = ["409625at7742", "409719at7742", "413149at7742", "42971at7742", "97645at7742"]
 
+rule supermatrix:
+	input:
+		expand("auto/phylogeny/{id}/{id}.treefile", id=IDS)
+	output:
+		"super.treefile"
+	singularity:
+		"docker://reslp/iqtree:2.0.7"
+	threads: 4
+	shell:
+		"""
+		iqtree -s auto/trimmed/ --prefix super -m MFP --seqtype AA -T {threads} -bb 1000
+
+		"""
 rule align:
 	input:
 		"by_gene/raw/{id}_all.fas"
@@ -6,10 +20,10 @@ rule align:
 		"auto/aligned/{id}.clustalo.fasta"
 	singularity:
 		"docker://chrishah/clustalo-docker:1.2.4"
-	threads: 2
+	threads: 1
 	shell:
 		"""
-		clustalo -i {input} -o {output}
+		clustalo -i {input} -o {output} --threads={threads}
 		"""
 rule trim:
 	input:
@@ -23,15 +37,19 @@ rule trim:
 		"""
 		trimal -in {input} -out {output}
 		"""
-rule ml:
+rule gene_tree:
 	input:
-		expand("auto/trimmed/{id}.clustalo.trimal.fasta", id=["193525at7742", "332227at7742", "33940at7742"])
+		"auto/trimmed/{id}.clustalo.trimal.fasta"
 	output:
-		"super.treefile"
+		"auto/phylogeny/{id}/{id}.treefile"
 	singularity:
 		"docker://reslp/iqtree:2.0.7"
 	threads: 2
 	shell:
 		"""
-		iqtree -s auto/trimmed/ --prefix super -m MFP --seqtype AA -T 2 -bb 1000
+		iqtree \
+              -s {input} \
+              --prefix auto/phylogeny/{wildcards.id}/{wildcards.id} \
+              -m MFP --seqtype AA -T {threads} -bb 1000
 		"""
+
