@@ -18,7 +18,7 @@ rule trim:
 		"auto/trimmed/{id}.clustalo.trimal.fasta"
 	singularity:
 		"docker://reslp/trimal:1.4.1"
-	threads: 2
+	threads: 1
 	shell:
 		"""
 		trimal -in {input} -out {output}
