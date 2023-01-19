@@ -11,7 +11,7 @@ channels:
   - conda-forge
   - bioconda
 dependencies:
-  - snakemake==5.9.1"
+  - snakemake==5.9.1
 ```
 
 This specifies that we want to call the environment 'snakemake', then we tell conda to look for dependencies in two channels, and we specifity that we want to install a specific Snakemake version. Save the file.
