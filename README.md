@@ -208,15 +208,17 @@ __5.) Automate the workflow with Snakemake__
 
 A very neat way of handling this kind of thing is [Snakemake](https://snakemake.readthedocs.io/en/stable/).
 
-The repository ships with a file called `Snakefile`. This file contains the instructions for running a basic workflow with Snakemake. Let's have a look.
+The very minimum you'll need to create Snakemake workflow is a so called Snakefile. The repository ships with a file called `Snakemake_intro/Snakefile`. This file contains the instructions for running a basic workflow with Snakemake. Let's have a look.
 
 ```bash
-(user@host)-$ less Snakefile #exit less with 'q'
+(user@host)-$ less Snakemake_intro/Snakefile #exit less with 'q'
 ```
 
-In the Snakefile you'll see 'rules' (that's what individual steps in the analyses are called in the Snakemake world). Some of which should look familiar, because we just ran them manually, and then from within a simple bash script. Filenames etc. are replaced with variables but other than that..
+In the Snakefile you'll see 'rules' (that's what individual steps in the analyses are called in the Snakemake world). Some of which should look familiar, because we just ran them manually, and then again within a simple for loop. Filenames etc. are replaced with variables but other than that..
 
-Snakemake is installed on your system. In order run Snakemake you first need to enter a `conda` environment that we've set up. 
+Snakemake should be installed on your system. An easy way to get it set up is through conda. If you haven't set it up yet, we provide some instructions [here](https://github.com/chrishah/phylogenomics_intro_vertebrata/tree/main/Snakemake_intro/README.md). 
+
+Assuming you've set up a conda environment called `snakemake`, in order to run Snakemake you first need to enter this environment.
 
 ```bash
 (user@host)-$ conda activate snakemake
@@ -235,7 +237,7 @@ Now, you could extend the analyses to further genes.
 (user@host)-$ snakemake -n -rp auto/trimmed/193525at7742.clustalo.trimal.fasta auto/trimmed/406935at7742.clustalo.trimal.fasta
 ```
 
-Actually, running would happen if you remove the `-n` flag. 
+Actually, running would happen if you remove the `-n` flag. Note that I've added another flag (`--use-singularity`) which tells snakemake to use containers for certain rules if so indicated in the `Snakefile`. 
 ```bash
 (user@host)-$ snakemake -rp --use-singularity auto/trimmed/193525at7742.clustalo.trimal.fasta auto/trimmed/406935at7742.clustalo.trimal.fasta
 ```
