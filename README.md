@@ -89,6 +89,8 @@ The resulting file `busco_table.tsv` can be found in your current directory.
 ***ATTENTION***
 > When calling singularity as above it will download the corresponding container from the cloud. This is very convenient, but might in some instances take a bit of time. If you are doing this exercise as part of a course you might be provided with local copies of the images to save some time. 
 __Please wait here to get instructions.__
+
+The following command would download the image and safe it to a local `*.sif` file.
 ```
 (user@host)-$ singularity pull docker://reslp/biopython_plus:1.77
 (user@host)-$ ls -hrlt
