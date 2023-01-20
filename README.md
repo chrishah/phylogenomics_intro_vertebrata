@@ -256,6 +256,13 @@ Actually, running would happen if you remove the `-n` flag. Note that I've added
 (user@host)-$ snakemake -rp --use-singularity auto/trimmed/193525at7742.clustalo.trimal.fasta auto/trimmed/406935at7742.clustalo.trimal.fasta
 ```
 
+***TASK***
+> Try to extend the Snakefile to also include:
+ - per gene phylogenetic inference (see above)
+ - supermatrix tree inference using the same 5 genes as before
+
+
+
 Have fun playing around with this for a while ;-)
 
 __6.) Full automation__
