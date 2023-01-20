@@ -265,7 +265,7 @@ Actually, running would happen if you remove the `-n` flag. Note that I've added
 
 Have fun playing around with this for a while ;-)
 
-__6.) Full automation__
+__6.) Full automation (OPTIONAL)__
 
 
 We are working on a pipeline for automating the entire process of phylogenomic analyses from BUSCO genes (for now). You can find it [here](https://github.com/reslp/phylociraptor).
