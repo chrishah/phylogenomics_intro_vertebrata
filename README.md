@@ -186,6 +186,9 @@ Now, let's say we want to go over these steps for multiple genes, say these:
  - 406935at7742
 
 For loop would do the job right? See the below code. Do you manage to add the tree inference step in, too? It's not in there yet.
+
+__Prepare your code in a script `bygene.sh`.
+
 ```bash
 (user@host)-$ for gene in $(echo "359032at7742 413149at7742 409719at7742 406935at7742")
 do
