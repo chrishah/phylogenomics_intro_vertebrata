@@ -86,6 +86,10 @@ We have a script to produce a matrix of presence/absence of BUSCO genes across m
 
 The resulting file `busco_table.tsv` can be found in your current directory.
 
+***ATTENTION***
+> When calling singularity as above it will download the corresponding container from the cloud. This is very convenient, but might in some instances take a bit of time. If you are doing this exercise as part of a course you might be provided with local copies of the images to save some time. Please wait here to get instructions.
+
+
 We'd want for example to identify all genes that are present in at least 20 of our 25 taxa and concatenate the sequences from each species into a single fasta file.
 
 ```bash
