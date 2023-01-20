@@ -1,0 +1,287 @@
+IQ-TREE 2.0.7 built Jun 17 2020
+
+Input file name: auto/trimmed/
+Type of analysis: ModelFinder + tree reconstruction + ultrafast bootstrap (1000 replicates)
+Random seed number: 339096
+
+REFERENCES
+----------
+
+To cite IQ-TREE please use:
+
+Bui Quang Minh, Heiko A. Schmidt, Olga Chernomor, Dominik Schrempf,
+Michael D. Woodhams, Arndt von Haeseler, and Robert Lanfear (2020)
+IQ-TREE 2: New models and efficient methods for phylogenetic inference
+in the genomic era. Mol. Biol. Evol., in press.
+https://doi.org/10.1093/molbev/msaa015
+
+To cite ModelFinder please use: 
+
+Subha Kalyaanamoorthy, Bui Quang Minh, Thomas KF Wong, Arndt von Haeseler,
+and Lars S Jermiin (2017) ModelFinder: Fast model selection for
+accurate phylogenetic estimates. Nature Methods, 14:587–589.
+https://doi.org/10.1038/nmeth.4285
+
+Since you used ultrafast bootstrap (UFBoot) please also cite: 
+
+Diep Thi Hoang, Olga Chernomor, Arndt von Haeseler, Bui Quang Minh,
+and Le Sy Vinh (2018) UFBoot2: Improving the ultrafast bootstrap
+approximation. Mol. Biol. Evol., 35:518–522.
+https://doi.org/10.1093/molbev/msx281
+
+SEQUENCE ALIGNMENT
+------------------
+
+Input data: 25 sequences with 4356 amino-acid sites
+Number of constant sites: 1402 (= 32.1855% of all sites)
+Number of invariant (constant or ambiguous constant) sites: 1402 (= 32.1855% of all sites)
+Number of parsimony informative sites: 2023
+Number of distinct site patterns: 3271
+
+ModelFinder
+-----------
+
+Best-fit model according to BIC: JTT+F+R5
+
+List of models sorted by BIC scores: 
+
+Model                  LogL         AIC      w-AIC        AICc     w-AICc         BIC      w-BIC
+JTT+F+R5         -80907.450  161962.899 +        1  161965.492 +        1  162434.968 +        1
+JTTDCMut+F+R5    -80931.696  162011.391 - 2.95e-11  162013.984 - 2.95e-11  162483.460 - 2.95e-11
+JTT+R5           -81066.999  162243.997 - 9.13e-62  162245.430 - 1.63e-61  162594.859 - 1.91e-35
+JTTDCMut+R5      -81092.304  162294.608 - 9.34e-73  162296.040 - 1.67e-72  162645.470 - 1.95e-46
+VT+F+R5          -81593.662  163335.323 - 9.59e-299  163337.916 - 9.59e-299  163807.392 - 9.59e-299
+WAG+F+R5         -81655.854  163459.707 -        0  163462.300 -        0  163931.776 -        0
+LG+F+R5          -81677.298  163502.595 -        0  163505.188 -        0  163974.664 -        0
+VT+R5            -81788.242  163686.484 -        0  163687.916 -        0  164037.346 -        0
+WAG+R5           -81848.998  163807.996 -        0  163809.429 -        0  164158.858 -        0
+mtInv+F+R5       -81892.342  163932.685 -        0  163935.277 -        0  164404.753 -        0
+Dayhoff+F+R5     -81902.137  163952.275 -        0  163954.868 -        0  164424.344 -        0
+DCMut+F+R5       -81903.718  163955.436 -        0  163958.029 -        0  164427.505 -        0
+LG+R5            -81987.213  164084.426 -        0  164085.859 -        0  164435.288 -        0
+LG+R6            -81986.068  164086.135 -        0  164087.673 -        0  164449.756 -        0
+LG+R4            -82024.983  164155.966 -        0  164157.297 -        0  164494.070 -        0
+LG+I+G4          -82048.021  164194.041 -        0  164195.179 -        0  164506.627 -        0
+LG+G4            -82059.676  164215.352 -        0  164216.444 -        0  164521.559 -        0
+mtMet+F+R5       -81991.103  164130.205 -        0  164132.798 -        0  164602.274 -        0
+HIVb+F+R5        -82022.017  164192.035 -        0  164194.628 -        0  164664.104 -        0
+LG+R3            -82127.664  164357.329 -        0  164358.561 -        0  164682.674 -        0
+cpREV+F+R5       -82076.931  164301.862 -        0  164304.455 -        0  164773.931 -        0
+FLU+F+R5         -82171.700  164491.400 -        0  164493.993 -        0  164963.469 -        0
+rtREV+F+R5       -82213.947  164575.893 -        0  164578.486 -        0  165047.962 -        0
+Dayhoff+R5       -82308.067  164726.134 -        0  164727.567 -        0  165076.996 -        0
+DCMut+R5         -82310.589  164731.178 -        0  164732.611 -        0  165082.040 -        0
+cpREV+R5         -82344.937  164799.874 -        0  164801.306 -        0  165150.736 -        0
+mtREV+F+R5       -82452.091  165052.183 -        0  165054.776 -        0  165524.252 -        0
+PMB+R5           -82583.151  165276.302 -        0  165277.734 -        0  165627.164 -        0
+PMB+F+R5         -82505.076  165158.153 -        0  165160.746 -        0  165630.222 -        0
+HIVb+R5          -82606.391  165322.783 -        0  165324.216 -        0  165673.645 -        0
+LG+R2            -82668.970  165435.939 -        0  165437.077 -        0  165748.525 -        0
+mtVer+F+R5       -82630.228  165408.455 -        0  165411.048 -        0  165880.524 -        0
+Blosum62+F+R5    -82635.501  165419.003 -        0  165421.596 -        0  165891.072 -        0
+Blosum62+R5      -82860.766  165831.533 -        0  165832.965 -        0  166182.395 -        0
+rtREV+R5         -82908.060  165926.121 -        0  165927.553 -        0  166276.983 -        0
+mtZOA+F+R5       -82853.645  165855.289 -        0  165857.882 -        0  166327.358 -        0
+FLU+R5           -83022.193  166154.387 -        0  166155.819 -        0  166505.249 -        0
+HIVw+F+R5        -83507.799  167163.597 -        0  167166.190 -        0  167635.666 -        0
+mtMAM+F+R5       -83547.257  167242.515 -        0  167245.107 -        0  167714.583 -        0
+mtART+F+R5       -83968.211  168084.423 -        0  168087.016 -        0  168556.492 -        0
+LG+I             -84690.387  169476.775 -        0  169477.867 -        0  169782.982 -        0
+mtZOA+R5         -85229.411  170568.823 -        0  170570.255 -        0  170919.685 -        0
+HIVw+R5          -85436.053  170982.107 -        0  170983.539 -        0  171332.969 -        0
+mtMet+R5         -85844.316  171798.631 -        0  171800.064 -        0  172149.493 -        0
+mtREV+R5         -85898.074  171906.148 -        0  171907.581 -        0  172257.010 -        0
+mtVer+R5         -86027.486  172164.972 -        0  172166.404 -        0  172515.834 -        0
+LG               -86574.590  173243.179 -        0  173244.227 -        0  173543.007 -        0
+mtInv+R5         -86741.280  173592.560 -        0  173593.992 -        0  173943.422 -        0
+mtMAM+R5         -87120.964  174351.928 -        0  174353.361 -        0  174702.790 -        0
+mtART+R5         -87375.951  174861.901 -        0  174863.334 -        0  175212.763 -        0
+
+AIC, w-AIC   : Akaike information criterion scores and weights.
+AICc, w-AICc : Corrected AIC scores and weights.
+BIC, w-BIC   : Bayesian information criterion scores and weights.
+
+Plus signs denote the 95% confidence sets.
+Minus signs denote significant exclusion.
+
+SUBSTITUTION PROCESS
+--------------------
+
+Model of substitution: JTT+F+R5
+
+State frequencies: (empirical counts from alignment)
+
+  pi(A) = 0.0696
+  pi(R) = 0.0667
+  pi(N) = 0.0314
+  pi(D) = 0.0511
+  pi(C) = 0.0296
+  pi(Q) = 0.0397
+  pi(E) = 0.0816
+  pi(G) = 0.0554
+  pi(H) = 0.0269
+  pi(I) = 0.0458
+  pi(L) = 0.1038
+  pi(K) = 0.0582
+  pi(M) = 0.0253
+  pi(F) = 0.0370
+  pi(P) = 0.0500
+  pi(S) = 0.0763
+  pi(T) = 0.0482
+  pi(W) = 0.0125
+  pi(Y) = 0.0288
+  pi(V) = 0.0622
+
+Model of rate heterogeneity: FreeRate with 5 categories
+Site proportion and rates:  (0.2364,0.0450) (0.2864,0.3391) (0.2574,0.9267) (0.1921,2.1867) (0.0277,8.4354)
+
+ Category  Relative_rate  Proportion
+  1         0.0450         0.2364
+  2         0.3391         0.2864
+  3         0.9267         0.2574
+  4         2.1867         0.1921
+  5         8.4354         0.0277
+
+MAXIMUM LIKELIHOOD TREE
+-----------------------
+
+Log-likelihood of the tree: -80907.4366 (s.e. 1035.1562)
+Unconstrained log-likelihood (without tree): -33526.3676
+Number of free parameters (#branches + #model parameters): 74
+Akaike information criterion (AIC) score: 161962.8731
+Corrected Akaike information criterion (AICc) score: 161965.4660
+Bayesian information criterion (BIC) score: 162434.9420
+
+Total tree length (sum of branch lengths): 10.8902
+Sum of internal branch lengths: 3.4379 (31.5685% of tree length)
+
+NOTE: Tree is UNROOTED although outgroup taxon 'Canis_lupus' is drawn at root
+Numbers in parentheses are  ultrafast bootstrap support (%)
+
++--Canis_lupus
+|
+|                            +--Meleagris_gallopavo
+|                         +--| (100)
+|                         |  +--Gallus_gallus
+|                     +---| (100)
+|                     |   +---Taeniopygia_guttata
+|                  +--| (97)
+|                  |  +---------Anolis_carolinensis
+|             +----| (100)
+|             |    |            +--Neoceratodus_forsteri
+|             |    |        +---| (100)
+|             |    |        |   +-----Protopterus_annectens
+|             |    |     +--| (56)
+|             |    |     |  |                     +-----Oreochromis_niloticus
+|             |    |     |  |                +----| (100)
+|             |    |     |  |                |    +-----Takifugu_rubripes
+|             |    |     |  |  +-------------| (100)
+|             |    |     |  |  |             +----------Danio_kyathit
+|             |    |     |  +--| (71)
+|             |    |     |     |        +-------------------------Eptatretus_burgeri
+|             |    |     |     |  +-----| (79)
+|             |    |     |     |  |     +---------------------------Petromyzon_marinus
+|             |    |     |     +--| (77)
+|             |    |     |        |       +---Scyliorhinus_canicula
+|             |    |     |        |    +--| (100)
+|             |    |     |        |    |  +-----Amblyraja_radiata
+|             |    |     |        +----| (100)
+|             |    |     |             +----Callorhinchus_milii
+|             |    |  +--| (93)
+|             |    |  |  +---------Latimeria_chalumnae
+|             |    +--| (98)
+|             |       |    +-----Rana_temporaria
+|             |       +----| (100)
+|             |            +-----Xenopus_tropicalis
+|          +--| (100)
+|          |  +------Ornithorhynchus_anatinus
+|     +----| (100)
+|     |    |   +--Monodelphis_domestica
+|     |    +---| (100)
+|     |        +-----Notamacropus_eugenii
+|  +--| (62)
+|  |  +--Loxodonta_africana
++--| (66)
+|  +--Dasypus_novemcinctus
+|
+|  +--Mus_musculus
++--| (67)
+   +--Homo_sapiens
+
+Tree in newick format:
+
+(Canis_lupus:0.1451374684,((((((((Meleagris_gallopavo:0.0667308152,Gallus_gallus:0.0335265613)100:0.0837801076,Taeniopygia_guttata:0.1918781519)100:0.1812402571,Anolis_carolinensis:0.4397004586)97:0.0735492084,((((Neoceratodus_forsteri:0.1310382345,Protopterus_annectens:0.2670734628)100:0.2013914702,(((Oreochromis_niloticus:0.2760593979,Takifugu_rubripes:0.2878538236)100:0.2160798133,Danio_kyathit:0.4878280908)100:0.6234475936,((Eptatretus_burgeri:1.1169170020,Petromyzon_marinus:1.2146551963)79:0.2901618649,((Scyliorhinus_canicula:0.1860799368,Amblyraja_radiata:0.2604167291)100:0.1080906159,Callorhinchus_milii:0.2360828303)100:0.2308200274)77:0.1216527266)71:0.0684681843)56:0.0306991408,Latimeria_chalumnae:0.4336336825)93:0.1618782134,(Rana_temporaria:0.2921935220,Xenopus_tropicalis:0.2819655870)100:0.2269420695)98:0.1178264604)100:0.2112689360,Ornithorhynchus_anatinus:0.3165717120)100:0.0633104664,(Monodelphis_domestica:0.1073572603,Notamacropus_eugenii:0.2669990389)100:0.1727507089)100:0.2224973749,Loxodonta_africana:0.0774197069)62:0.0094036633,Dasypus_novemcinctus:0.1001551557)66:0.0088249032,(Mus_musculus:0.1435402690,Homo_sapiens:0.0915001079)67:0.0137815356);
+
+CONSENSUS TREE
+--------------
+
+Consensus tree is constructed from 1000 bootstrap trees
+Log-likelihood of consensus tree: -80907.436880
+Robinson-Foulds distance between ML tree and consensus tree: 0
+
+Branches with support >0.000000% are kept (extended consensus)
+Branch lengths are optimized by maximum likelihood on original alignment
+Numbers in parentheses are bootstrap supports (%)
+
++--Canis_lupus
+|
+|                            +--Meleagris_gallopavo
+|                         +--| (100)
+|                         |  +--Gallus_gallus
+|                     +---| (100)
+|                     |   +---Taeniopygia_guttata
+|                  +--| (97)
+|                  |  +---------Anolis_carolinensis
+|             +----| (100)
+|             |    |            +--Neoceratodus_forsteri
+|             |    |        +---| (100)
+|             |    |        |   +-----Protopterus_annectens
+|             |    |     +--| (56)
+|             |    |     |  |                     +-----Oreochromis_niloticus
+|             |    |     |  |                +----| (100)
+|             |    |     |  |                |    +-----Takifugu_rubripes
+|             |    |     |  |  +-------------| (100)
+|             |    |     |  |  |             +----------Danio_kyathit
+|             |    |     |  +--| (71)
+|             |    |     |     |        +-------------------------Eptatretus_burgeri
+|             |    |     |     |  +-----| (79)
+|             |    |     |     |  |     +---------------------------Petromyzon_marinus
+|             |    |     |     +--| (77)
+|             |    |     |        |       +---Scyliorhinus_canicula
+|             |    |     |        |    +--| (100)
+|             |    |     |        |    |  +-----Amblyraja_radiata
+|             |    |     |        +----| (100)
+|             |    |     |             +----Callorhinchus_milii
+|             |    |  +--| (93)
+|             |    |  |  +---------Latimeria_chalumnae
+|             |    +--| (98)
+|             |       |    +-----Rana_temporaria
+|             |       +----| (100)
+|             |            +-----Xenopus_tropicalis
+|          +--| (100)
+|          |  +------Ornithorhynchus_anatinus
+|     +----| (100)
+|     |    |   +--Monodelphis_domestica
+|     |    +---| (100)
+|     |        +-----Notamacropus_eugenii
+|  +--| (62)
+|  |  +--Loxodonta_africana
++--| (66)
+|  +--Dasypus_novemcinctus
+|
+|  +--Mus_musculus
++--| (67)
+   +--Homo_sapiens
+
+
+Consensus tree in newick format: 
+
+(Canis_lupus:0.1450816021,((((((((Meleagris_gallopavo:0.0667040541,Gallus_gallus:0.0335107549)100:0.0837405683,Taeniopygia_guttata:0.1917993298)100:0.1811563196,Anolis_carolinensis:0.4394902950)97:0.0735445681,((((Neoceratodus_forsteri:0.1309800310,Protopterus_annectens:0.2669208568)100:0.2012906759,(((Oreochromis_niloticus:0.2759335397,Takifugu_rubripes:0.2876806413)100:0.2159557058,Danio_kyathit:0.4875686849)100:0.6230920536,((Eptatretus_burgeri:1.1155739717,Petromyzon_marinus:1.2131303936)79:0.2908696631,((Scyliorhinus_canicula:0.1859723717,Amblyraja_radiata:0.2602397316)100:0.1080406421,Callorhinchus_milii:0.2359203813)100:0.2307627171)77:0.1215296988)71:0.0684333608)56:0.0306956241,Latimeria_chalumnae:0.4334043696)93:0.1618072992,(Rana_temporaria:0.2920541402,Xenopus_tropicalis:0.2818153033)100:0.2268490392)98:0.1177711745)100:0.2111814982,Ornithorhynchus_anatinus:0.3164324065)100:0.0632891313,(Monodelphis_domestica:0.1073162328,Notamacropus_eugenii:0.2668868652)100:0.1726934817)100:0.2224039032,Loxodonta_africana:0.0773889229)62:0.0094012929,Dasypus_novemcinctus:0.1001155805)66:0.0088224750,(Mus_musculus:0.1434843802,Homo_sapiens:0.0914641569)67:0.0137795455);
+
+TIME STAMP
+----------
+
+Date and time: Fri Jan 20 19:11:41 2023
+Total CPU time used: 478.645234 seconds (0h:7m:58s)
+Total wall-clock time used: 30.20703101 seconds (0h:0m:30s)
+

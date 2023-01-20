@@ -1,0 +1,55 @@
+IDS = ["409625at7742", "409719at7742", "413149at7742", "42971at7742", "97645at7742"]
+
+rule supermatrix:
+	input:
+		expand("auto/phylogeny/{id}/{id}.treefile", id=IDS)
+	output:
+		"super.treefile"
+	singularity:
+		"~/Share/Singularity_images/iqtree_2.0.7.sif"
+	threads: 16
+	shell:
+		"""
+		iqtree -s auto/trimmed/ --prefix super -m MFP --seqtype AA -T {threads} -bb 1000
+
+		"""
+rule align:
+	input:
+		"by_gene/raw/{id}_all.fas"
+	output:
+		"auto/aligned/{id}.clustalo.fasta"
+	singularity:
+		"~/Share/Singularity_images/clustalo_1.2.4.sif"
+	threads: 1
+	shell:
+		"""
+		clustalo -i {input} -o {output} --threads={threads}
+		"""
+rule trim:
+	input:
+		"auto/aligned/{id}.clustalo.fasta"
+	output:
+		"auto/trimmed/{id}.clustalo.trimal.fasta"
+	singularity:
+		"~/Share/Singularity_images/trimal_1.4.1.sif"
+	threads: 1
+	shell:
+		"""
+		trimal -in {input} -out {output}
+		"""
+rule gene_tree:
+	input:
+		"auto/trimmed/{id}.clustalo.trimal.fasta"
+	output:
+		"auto/phylogeny/{id}/{id}.treefile"
+	singularity:
+		"~/Share/Singularity_images/iqtree_2.0.7.sif"
+	threads: 8
+	shell:
+		"""
+		iqtree \
+              -s {input} \
+              --prefix auto/phylogeny/{wildcards.id}/{wildcards.id} \
+              -m MFP --seqtype AA -T {threads} -bb 1000
+		"""
+

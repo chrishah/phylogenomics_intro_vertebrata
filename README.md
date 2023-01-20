@@ -86,6 +86,17 @@ We have a script to produce a matrix of presence/absence of BUSCO genes across m
 
 The resulting file `busco_table.tsv` can be found in your current directory.
 
+***ATTENTION***
+> When calling singularity as above it will download the corresponding container from the cloud. This is very convenient, but might in some instances take a bit of time. If you are doing this exercise as part of a course you might be provided with local copies of the images to save some time. 
+__Please wait here to get instructions.__
+
+The following command would download the image and safe it to a local `*.sif` file.
+```
+(user@host)-$ singularity pull docker://reslp/biopython_plus:1.77
+(user@host)-$ ls -hrlt
+```
+
+
 We'd want for example to identify all genes that are present in at least 20 of our 25 taxa and concatenate the sequences from each species into a single fasta file.
 
 ```bash
@@ -175,6 +186,9 @@ Now, let's say we want to go over these steps for multiple genes, say these:
  - 406935at7742
 
 For loop would do the job right? See the below code. Do you manage to add the tree inference step in, too? It's not in there yet.
+
+__Prepare your code in a script `bygene.sh`.__
+
 ```bash
 (user@host)-$ for gene in $(echo "359032at7742 413149at7742 409719at7742 406935at7742")
 do
@@ -208,6 +222,8 @@ __5.) Automate the workflow with Snakemake__
 
 A very neat way of handling this kind of thing is [Snakemake](https://snakemake.readthedocs.io/en/stable/).
 
+Snakemake should be installed on your system. An easy way to get it set up is through conda. If you haven't set it up yet, we provide some instructions [here](https://github.com/chrishah/phylogenomics_intro_vertebrata/tree/main/Snakemake_intro/README.md). 
+
 The very minimum you'll need to create Snakemake workflow is a so called Snakefile. The repository ships with a file called `Snakemake_intro/Snakefile`. This file contains the instructions for running a basic workflow with Snakemake. Let's have a look.
 
 ```bash
@@ -215,8 +231,6 @@ The very minimum you'll need to create Snakemake workflow is a so called Snakefi
 ```
 
 In the Snakefile you'll see 'rules' (that's what individual steps in the analyses are called in the Snakemake world). Some of which should look familiar, because we just ran them manually, and then again within a simple for loop. Filenames etc. are replaced with variables but other than that..
-
-Snakemake should be installed on your system. An easy way to get it set up is through conda. If you haven't set it up yet, we provide some instructions [here](https://github.com/chrishah/phylogenomics_intro_vertebrata/tree/main/Snakemake_intro/README.md). 
 
 Assuming you've set up a conda environment called `snakemake`, in order to run Snakemake you first need to enter this environment.
 
@@ -242,9 +256,16 @@ Actually, running would happen if you remove the `-n` flag. Note that I've added
 (user@host)-$ snakemake -rp --use-singularity auto/trimmed/193525at7742.clustalo.trimal.fasta auto/trimmed/406935at7742.clustalo.trimal.fasta
 ```
 
+***TASK***
+> Try to extend the Snakefile to also include:
+ - per gene phylogenetic inference (see above)
+ - supermatrix tree inference using the same 5 genes as before
+
+
+
 Have fun playing around with this for a while ;-)
 
-__6.) Full automation__
+__6.) Full automation (OPTIONAL)__
 
 
 We are working on a pipeline for automating the entire process of phylogenomic analyses from BUSCO genes (for now). You can find it [here](https://github.com/reslp/phylociraptor).
