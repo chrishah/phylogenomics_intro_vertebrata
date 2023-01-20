@@ -1,0 +1,10 @@
+snakemake -n --dag auto/trimmed/193525at7742.clustalo.trimal.fasta auto/trimmed/406935at7742.clustalo.trimal.fasta | dot -Tpdf > dag.1.pdf
+snakemake --use-singularity -rp auto/trimmed/193525at7742.clustalo.trimal.fasta auto/trimmed/406935at7742.clustalo.trimal.fasta
+snakemake -n --dag auto/trimmed/193525at7742.clustalo.trimal.fasta auto/trimmed/406935at7742.clustalo.trimal.fasta | dot -Tpdf > dag.2.pdf
+
+touch auto/aligned/193525at7742.clustalo.fasta 
+snakemake -n --dag auto/trimmed/193525at7742.clustalo.trimal.fasta auto/trimmed/406935at7742.clustalo.trimal.fasta | dot -Tpdf > dag.3.pdf
+
+snakemake -n --dag -s backup/Snakefile_with_ml | dot -Tpdf > dag.with_ml.pdf
+
+snakemake -n --dag -s backup/Snakefile_with_ml_from_dir | dot -Tpdf > dag.with_ml_from_dir.pdf

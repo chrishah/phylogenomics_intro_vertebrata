@@ -1,0 +1,57 @@
+import glob
+from os import path
+IDS=[ os.path.basename(x).split("_")[0] for x in glob.glob("by_gene/raw/*")]
+
+rule supermatrix:
+	input:
+		expand("auto/phylogeny/{id}/{id}.treefile", id=IDS)
+	output:
+		"super.treefile"
+	singularity:
+		"docker://reslp/iqtree:2.0.7"
+	threads: 4
+	shell:
+		"""
+		iqtree -s auto/trimmed/ --prefix super -m MFP --seqtype AA -T {threads} -bb 1000
+
+		"""
+rule align:
+	input:
+		"by_gene/raw/{id}_all.fas"
+	output:
+		"auto/aligned/{id}.clustalo.fasta"
+	singularity:
+		"docker://chrishah/clustalo-docker:1.2.4"
+	threads: 1
+	shell:
+		"""
+		clustalo -i {input} -o {output} --threads={threads}
+		"""
+rule trim:
+	input:
+		"auto/aligned/{id}.clustalo.fasta"
+	output:
+		"auto/trimmed/{id}.clustalo.trimal.fasta"
+	singularity:
+		"docker://reslp/trimal:1.4.1"
+	threads: 1
+	shell:
+		"""
+		trimal -in {input} -out {output}
+		"""
+rule gene_tree:
+	input:
+		"auto/trimmed/{id}.clustalo.trimal.fasta"
+	output:
+		"auto/phylogeny/{id}/{id}.treefile"
+	singularity:
+		"docker://reslp/iqtree:2.0.7"
+	threads: 2
+	shell:
+		"""
+		iqtree \
+              -s {input} \
+              --prefix auto/phylogeny/{wildcards.id}/{wildcards.id} \
+              -m MFP --seqtype AA -T {threads} -bb 1000
+		"""
+
