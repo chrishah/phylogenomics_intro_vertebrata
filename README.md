@@ -232,7 +232,22 @@ This will run for about 10 Minutes. You can check out the result `five_genes.tre
 (user@host)-$ cat five_genes.treefile #or try backup/five_genes.treefile instead if you had trouble
 ```
 
-__Congratulations, you've built your first phylogenomic tree!!!__
+Now, we can also try to build a speciestree from the 5 individual gene trees using ASTRAL. First bring the individual gene trees together into one one file. Let's call the file `trees.txt`.
+
+Then run ASTRAL.
+```bash
+(user@host)-$ singularity exec docker://reslp/astral:5.7.1 \
+               java -jar /ASTRAL-5.7.1/Astral/astral.5.7.1.jar \
+               -i trees.txt -o species_tree.astral.tre 
+```
+Have a look at the result.
+```bash
+(user@host)-$ cat species_tree.astral.tre #or try backup/species_tree.astral.tre instead if you had trouble
+```
+
+Instead of looking at the plain text representation you can also explore the trees e.g. via [iTOL](https://itol.embl.de/upload.cgi).
+
+__Congratulations, you've just built your first phylogenomic tree(s)!!!__
 
 __5.) Automate the workflow with Snakemake__
 
