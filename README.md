@@ -185,7 +185,7 @@ Now, let's say we want to go over these steps for multiple genes, say these:
  - 409719at7742
  - 406935at7742
 
-For loop would do the job right? See the below code. Do you manage to add the tree inference step in, too? It's not in there yet.
+For loop would do the job, right? See the below code. Do you manage to add the tree inference step in, too? It's not in there yet.
 
 __Prepare your code in a script `bygene.sh`.__
 
@@ -200,20 +200,36 @@ do
         echo -e "$(date)\tDone"
 done
 ```
+If something went wrong and you want to continue anyway you can get the data you'd have produced in the previous step by copying it from our backup directory.
+```bash
+(user@host)-$ rsync -avpuzP backup/by_gene/* by_gene
+```
 
-Now, let's infer an ML tree using a supermatrix of all 5 genes that we have processed so far.
+Well Done! Now you should have five trees - one for each of the genes. Just to doublecheck:
+
+```bash
+(user@host)-$ ls -1 by_gene/phylogeny/*/*treefile
+by_gene/phylogeny/359032at7742/359032at7742.treefile
+by_gene/phylogeny/406935at7742/406935at7742.treefile
+by_gene/phylogeny/409625at7742/409625at7742.treefile
+by_gene/phylogeny/409719at7742/409719at7742.treefile
+by_gene/phylogeny/413149at7742/413149at7742.treefile
+```
+
+Now, then, let's infer a ML tree using a supermatrix of all 5 genes that we have processed so far. Conveniently, you'll just need to point IQtree onto a directory that contains multiple alignments and it will do the rest. In our case we use the trimmed alignments. Be aware, though, that in order for IQtree to be able to match up the right sequences in the supermatrix you're going to have to use the same names in all individual alignment files.
+
 ```bash
 (user@host)-$ singularity exec docker://reslp/iqtree:2.0.7 \
               iqtree \
               -s by_gene/trimmed/ \
               --prefix five_genes \
               -m MFP --seqtype AA -T 2 -bb 1000 
-``` 
+```
 
 This will run for about 10 Minutes. You can check out the result `five_genes.treefile`, once it's done.
 
 ```bash
-(user@host)-$ cat five_genes.treefile
+(user@host)-$ cat five_genes.treefile #or try backup/five_genes.treefile instead if you had trouble
 ```
 
 __Congratulations, you've built your first phylogenomic tree!!!__
