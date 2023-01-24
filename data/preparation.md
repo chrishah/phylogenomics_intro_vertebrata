@@ -4,11 +4,11 @@ These steps were run in preparation for this repository.
 #run setup
 ./phylociraptor setup -t serial=2 --config-file data/config.vertebrata_minimal.yaml --verbose
 
-#reduce busco set to only 20 busco genes
-./modify_busco.sh
-
 #orthology
 ./phylociraptor orthology -t serial=2 --snakemake="--until busco" --config-file data/config.vertebrata_minimal.yaml --verbose
+
+#reduce busco set to only 20 busco genes for subsequent steps
+./modify_busco.sh
 
 #cleanup (just to save some space on Github)
 rm -rf $(find ./results/orthology/busco/busco_runs/ -name "softw*")
