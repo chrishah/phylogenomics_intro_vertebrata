@@ -6,7 +6,7 @@ for gene in $(echo "359032at7742 413149at7742 409719at7742 406935at7742")
 do
         echo -e "\n$(date)\t$gene"
         echo -e "$(date)\taligning"
-        singularity exec $sif_file_path/clustalo-docker_1.2.4.sif clustalo -i by_gene/raw/${gene}_all.fas -o by_gene/aligned/${gene}.clustalo.fasta --threads=2
+        singularity exec $sif_file_path/clustalo_1.2.4.sif clustalo -i by_gene/raw/${gene}_all.fas -o by_gene/aligned/${gene}.clustalo.fasta --threads=2
         echo -e "$(date)\ttrimming"
         singularity exec $sif_file_path/trimal_1.4.1.sif trimal -in by_gene/aligned/${gene}.clustalo.fasta -out by_gene/trimmed/${gene}.clustalo.trimal.fasta -gappyout
         mkdir -p by_gene/phylogeny/${gene}

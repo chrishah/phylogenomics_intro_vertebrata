@@ -1,0 +1,25 @@
+
+rule align:
+	input:
+		"by_gene/raw/{id}_all.fas"
+	output:
+		"auto/aligned/{id}.clustalo.fasta"
+	singularity:
+		"~/Share/Singularity_images/clustalo_1.2.4.sif"
+	threads: 1
+	shell:
+		"""
+		clustalo -i {input} -o {output} --threads={threads}
+		"""
+rule trim:
+	input:
+		"auto/aligned/{id}.clustalo.fasta"
+	output:
+		"auto/trimmed/{id}.clustalo.trimal.fasta"
+	singularity:
+		"~/Share/Singularity_images/trimal_1.4.1.sif"
+	threads: 1
+	shell:
+		"""
+		trimal -in {input} -out {output}
+		"""
