@@ -178,7 +178,7 @@ Let's move on to score and filter the alignment, using [TrimAl](https://vicfero.
 ```
 
 Try open the upload [dialog](https://www.ncbi.nlm.nih.gov/projects/msaviewer/?appname=ncbi_msav&openuploaddialog) for the Alignment viewer in a new tab and upload the new file (`by_gene/trimmed/409625at7742.clustalo.trimal.fasta`).
-What do you think? The algorithm has removed quite a bit at the ends of the original alignment, reducing it to only ~100, but these look mostly ok, at first glance.
+What do you think? The algorithm has removed quite a bit at the ends of the original alignment, reducing it to only ~100 positions, but these look mostly ok, at first glance.
 
 Now, let's infer a ML tree with [IQtree](http://www.iqtree.org/).
 
