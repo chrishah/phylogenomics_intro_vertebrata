@@ -200,6 +200,10 @@ The tree is in the Newick tree format. There is a bunch of programs that allow y
 (user@host)-$ cat by_gene/phylogeny/409625at7742/409625at7742.treefile
 ```
 
+Go to the [iTOL](https://itol.embl.de/upload.cgi), select 'Upload a tree' and copy/paste the textual representation of our tree into the 'Tree text' field.
+
+What do you think? Does it look right? Remember that this is based on one gene, and different genes may tell different stories depending on their history, which may be affected by many factors.
+
 __Well done!__
 
 
