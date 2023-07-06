@@ -123,7 +123,7 @@ adjust to
 ```
 ***Moving on..***
 
-We'd want for example to identify all genes that are present in at least 20 of our 25 taxa and concatenate the sequences from each species into a single fasta file. We made a script for that - see below. __Please make sure to follow the instructions also with respect to creating new directories, when this is suggested!__.
+Next, we'd want for example to identify all genes that are present in at least 20 of our 25 taxa and concatenate the sequences from each species into a single fasta file. We made a script for that - see below. __Please make sure to follow the instructions also with respect to creating new directories, when this is suggested!__.
 
 ```bash
 (user@host)-$ mkdir -p by_gene/raw
