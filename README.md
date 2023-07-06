@@ -97,9 +97,23 @@ The following command would download the image and safe it to a local `*.sif` fi
 (user@host)-$ singularity pull docker://reslp/biopython_plus:1.77
 (user@host)-$ ls -hrlt
 ```
+Note that the previous command `singularity pull ..` downloaded a file called `biopython_plus_1.77.sif` - this is a physical representation of the image. Note also the naming scheme. Singularity names the file by combining the image name with the version (the part after the ':') via a '\_', so 'biopython\_plus:1.77' becomes 'biopython\_plus\_1.77.sif'.
 
+To use the `*.sif` file instead of always querying the cloud the command before could be adjusted to:
+```bash
+(user@host)-$ singularity exec biopython_plus_1.77.sif \
+              bin/extract_busco_table.py \
+              --hmm results/orthology/busco/busco_set/vertebrata_odb10/hmms \
+              --busco_results results/orthology/busco/busco_runs/ \
+              -o busco_table.tsv
+```
 
-We'd want for example to identify all genes that are present in at least 20 of our 25 taxa and concatenate the sequences from each species into a single fasta file.
+***ATTENTION***
+> If you're doing this as part of a course, all images may have been downloaded for you already - please check for example `ls ~/Share/Singularity_images/` or ask the instructors. Then in all subsequent singularity calls please use the local images, rather than querying the cloud, so instead of `singularity exec docker://reslp/biopython_plus:1.77 ..` adjust to `singularity exec ~/Share/Singularity_images/biopython_plus_1.77.sif ..`
+
+Moving on..
+
+We'd want for example to identify all genes that are present in at least 20 of our 25 taxa and concatenate the sequences from each species into a single fasta file. We made a script for that - see below. __Please make sure to follow the instructions also with respect to creating new directories, when this is suggested!__.
 
 ```bash
 (user@host)-$ mkdir -p by_gene/raw
