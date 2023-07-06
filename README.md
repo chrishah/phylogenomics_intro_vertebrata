@@ -340,8 +340,11 @@ Actually, running would happen if you remove the `-n` flag. Note that I've added
                  auto/trimmed/406935at7742.clustalo.trimal.fasta
 ```
 
-See if you can get it run also for gene id `378120at7742`.
+Check what happens if you run the above command once again.
 
+Now, remove the file `auto/trimmed/406935at7742.clustalo.trimal.fasta` and rerun the command. Neat, no?
+
+See if you can get it run also for gene id `378120at7742`.
 
 ***TASK***
 > Try to extend the Snakefile to also include:
