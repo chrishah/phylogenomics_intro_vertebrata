@@ -361,6 +361,16 @@ Solutions can be found in these files:
  - `backup/Snakefile_with_ml`
 
 
+A Snakefile that would do the full analyses using all genes that are present in the directory `by_gene/raw/` can be found here: `backup/Snakefile_with_ml_from_dir`.
+
+Try it out:
+```bash
+(user@host)-$ snakemake -n -rp --use-singularity \
+                 -s backup/Snakefile_with_ml_from_dir
+```
+
+
+
 __6.) Full automation (OPTIONAL)__
 
 
