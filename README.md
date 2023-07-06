@@ -374,9 +374,9 @@ Try it out:
 __6.) Full automation (OPTIONAL)__
 
 
-We are working on a pipeline for automating the entire process of phylogenomic analyses from BUSCO genes (for now). You can find it [here](https://github.com/reslp/phylociraptor).
+The current repository is actually a snapshot of [phylociraptor](https://github.com/reslp/phylociraptor). This is a pipeline for automating the entire process of phylogenomic analyses from BUSCO genes (for now). 
 
-The current repository is actually a snapshot of [phylociraptor](https://github.com/reslp/phylociraptor). In the base directory of this repository you could resume an analysis as shown below. If there is time we'll talk about the setup a little bit.
+In the base directory of this repository you could resume an analysis as shown below. If there is time we'll talk about the setup a little bit.
 
 The main things you need are:
  - config file `data/config.vertebrata_minimal.yaml`
