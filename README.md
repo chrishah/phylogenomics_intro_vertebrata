@@ -57,11 +57,13 @@ Let's get it downloaded. Note that the `(user@host)-$` part of the code below ju
 #leave the directory for now
 (user@host)-$ cd ../..
 ```
-We have compiled a list of published genomes that we will be including in our analyses [here](https://github.com/chrishah/phylogenomics_intro_vertebrata/tree/main/data/samples.csv). You don't have to download them all now, but do another few just as practice. You can do one by one or use your scripting skills (for loop) to get them all in one go. 
+We have compiled a list of published genomes that we will be including in our analyses [here](https://github.com/chrishah/phylogenomics_intro_vertebrata/tree/main/data/samples.csv) - the actual text file ships with the repository here: `data/samples.csv`. You don't have to download them all now, but do another few just as practice. You can do one by one or use your scripting skills (for loop) to get them all in one go. 
 
-To keep things clean I'd suggest to download each into a separate directory that should be named according to the binomial (connected with underscores, rather than spaces) - see example for _L. chalumnae_ above.
+To keep things clean I'd suggest to download each into a separate directory that should be named according to the binomial (connected with underscores, rather than spaces, see the first column of the file `data/samples.csv`), following the same logic as in the example for _L. chalumnae_ above.
 
 __2.) Run BUSCO on each assembly__
+
+In order to identify a defined set of genes in all of our genomes we could use BUSCO, i.e. run it on each of the downloaded genomes.
 
 ***Attention***
 > Since these genomes are relatively large BUSCO takes quite a while to run so this step has been already done for you.
