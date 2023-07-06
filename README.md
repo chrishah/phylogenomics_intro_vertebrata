@@ -161,7 +161,7 @@ Perform multiple sequence alignment with [clustalo](http://www.clustal.org/omega
               --threads=2
 ```
 
-We can then look at the alignment result (`by_gene/aligned/409625at7742.clustalo.fasta`). There is a number of programs available to do that, e.g. MEGA, Jalview, Aliview, or you can do it online. A link to the upload client for the NCBI Multiple Sequence Alignment Viewer is [here](https://www.ncbi.nlm.nih.gov/projects/msaviewer/?appname=ncbi_msav&openuploaddialog) (I suggest to open in new tab). Download the alignment (`by_gene/aligned/409625at7742.clustalo.fasta`) to your local computer, upload to the online tool, press 'Close' button, and have a look.
+We can then look at the alignment result (`by_gene/aligned/409625at7742.clustalo.fasta`). There is a number of programs available to do that, e.g. MEGA, Jalview, Aliview, or you can do it online. A link to the upload client for the NCBI Multiple Sequence Alignment Viewer is [here](https://www.ncbi.nlm.nih.gov/projects/msaviewer/?appname=ncbi_msav&openuploaddialog) (I suggest to open in new tab). Download the alignment (`by_gene/aligned/409625at7742.clustalo.fasta`) to your local computer, upload the file to the online tool, press 'Close' button, and have a look.
 
 What do you think? It's actually quite messy.. 
 
