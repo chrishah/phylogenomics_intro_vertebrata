@@ -217,12 +217,9 @@ Now, let's say we want to go over these steps for multiple genes, say these:
 
 For loop would do the job, right? See the below code. Do you manage to add the tree inference step in, too? It's not in there yet.
 
-__Prepare your code in a script `bygene.sh`.__
-
-A possible solution for the script (including the tree inference) can be found here: `backup/bygene.sh`.
-
 ```bash
-(user@host)-$ for gene in $(echo "359032at7742 413149at7742 409719at7742 406935at7742")
+#!/bin/bash
+for gene in $(echo "359032at7742 413149at7742 409719at7742 406935at7742")
 do
         echo -e "\n$(date)\t$gene"
         echo -e "$(date)\taligning"
@@ -232,6 +229,18 @@ do
         echo -e "$(date)\tDone"
 done
 ```
+
+__Prepare your code in a script `bygene.sh`.__
+
+A possible solution for the script (including the tree inference) can be found here: `backup/bygene.sh`, or if you'd been asked to use local singularity images check out the solution here: `backup/bygene_local.sh`.
+
+Run your script, e.g. like so:
+```bash
+(user@host)-$ chmod a+x bygene.sh #make sure it's executable
+(user@host)-$ ./bygene.sh
+
+```
+
 If something went wrong and you want to continue anyway you can get the data you'd have produced in the previous step by copying it from our backup directory.
 ```bash
 (user@host)-$ rsync -avpuzP backup/by_gene/* by_gene
