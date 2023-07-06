@@ -299,10 +299,11 @@ A very neat way of handling this kind of thing is [Snakemake](https://snakemake.
 
 Snakemake should be installed on your system. An easy way to get it set up is through conda. If you haven't set it up yet, we provide some instructions [here](https://github.com/chrishah/phylogenomics_intro_vertebrata/tree/main/Snakemake_intro/README.md). 
 
-The very minimum you'll need to create Snakemake workflow is a so called Snakefile. The repository ships with a file called `Snakemake_intro/Snakefile`. This file contains the instructions for running a basic workflow with Snakemake. Let's have a look.
+The very minimum you'll need to create Snakemake workflow is a so called Snakefile. The repository ships with files called `Snakemake_intro/Snakefile_local` and `Snakemake_intro/Snakefile_cloud`. This file contains the instructions for running a basic workflow with Snakemake. Let's have a look.
 
 ```bash
-(user@host)-$ less Snakemake_intro/Snakefile #exit less with 'q'
+(user@host)-$ less Snakemake_intro/Snakefile_local #exit less with 'q' - the version to use local images
+(user@host)-$ less Snakemake_intro/Snakefile_cloud #exit less with 'q' - the version to use images from the cloud
 ```
 
 In the Snakefile you'll see 'rules' (that's what individual steps in the analyses are called in the Snakemake world). Some of which should look familiar, because we just ran them manually, and then again within a simple for loop. Filenames etc. are replaced with variables but other than that..
@@ -314,9 +315,10 @@ Assuming you've set up a conda environment called `snakemake`, in order to run S
 (snakemake) (user@host)-$ snakemake -h
 ```
 
-Now, let's try to do a Snakemake 'dry-run', providing a specific target file and see what happens. 
+Now, let's try to do a Snakemake 'dry-run', providing a specific target file and see what happens. You'll first need to put a file called `Snakefile` in place - this is the default expectation of Snakemake.
 
 ```bash
+(user@host)-$ cp Snakemake_intro/Snakefile_local Snakefile #or cp Snakemake_intro/Snakefile_cloud Snakefile if you prefer to query the cloud
 (user@host)-$ snakemake -n -rp auto/trimmed/193525at7742.clustalo.trimal.fasta
 ```
 
@@ -339,6 +341,11 @@ Actually, running would happen if you remove the `-n` flag. Note that I've added
 
 
 Have fun playing around with this for a while ;-)
+
+Solutions can be found in these files:
+ - `backup/Snakefile_with_ml_local`
+ - `backup/Snakefile_with_ml`
+
 
 __6.) Full automation (OPTIONAL)__
 
