@@ -219,6 +219,8 @@ For loop would do the job, right? See the below code. Do you manage to add the t
 
 __Prepare your code in a script `bygene.sh`.__
 
+A possible solution for the script (including the tree inference) can be found here: `backup/bygene.sh`.
+
 ```bash
 (user@host)-$ for gene in $(echo "359032at7742 413149at7742 409719at7742 406935at7742")
 do
