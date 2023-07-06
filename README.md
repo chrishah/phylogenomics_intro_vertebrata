@@ -109,7 +109,12 @@ To use the `*.sif` file instead of always querying the cloud the command before 
 ```
 
 ***ATTENTION***
-> If you're doing this as part of a course, all images may have been downloaded for you already - please check for example `ls ~/Share/Singularity_images/` or ask the instructors. Then in all subsequent singularity calls please use the local images, rather than querying the cloud, so instead of `singularity exec docker://reslp/biopython_plus:1.77 ..` adjust to `singularity exec ~/Share/Singularity_images/biopython_plus_1.77.sif ..`
+> If you're doing this as part of a course, all images may have been downloaded for you already - please check for example:
+`ls ~/Share/Singularity_images/` or ask the instructors.
+Then, in all subsequent singularity calls please use the local images, rather than querying the cloud, so instead of:
+`singularity exec docker://reslp/biopython_plus:1.77 ..`
+adjust to
+`singularity exec ~/Share/Singularity_images/biopython_plus_1.77.sif ..`
 
 Moving on..
 
