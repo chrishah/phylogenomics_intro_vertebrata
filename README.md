@@ -321,19 +321,27 @@ Now, let's try to do a Snakemake 'dry-run', providing a specific target file and
 
 ```bash
 (user@host)-$ cp Snakemake_intro/Snakefile_local Snakefile #or cp Snakemake_intro/Snakefile_cloud Snakefile if you prefer to query the cloud
-(user@host)-$ snakemake -n -rp auto/trimmed/193525at7742.clustalo.trimal.fasta
+(user@host)-$ snakemake -n -rp \
+                 auto/trimmed/193525at7742.clustalo.trimal.fasta
 ```
 
 
 Now, you could extend the analyses to further genes.
 ```bash
-(user@host)-$ snakemake -n -rp auto/trimmed/193525at7742.clustalo.trimal.fasta auto/trimmed/406935at7742.clustalo.trimal.fasta
+(user@host)-$ snakemake -n -rp \
+                 auto/trimmed/193525at7742.clustalo.trimal.fasta \
+                 auto/trimmed/406935at7742.clustalo.trimal.fasta
 ```
 
 Actually, running would happen if you remove the `-n` flag. Note that I've added another flag (`--use-singularity`) which tells snakemake to use containers for certain rules if so indicated in the `Snakefile`. 
 ```bash
-(user@host)-$ snakemake -rp --use-singularity auto/trimmed/193525at7742.clustalo.trimal.fasta auto/trimmed/406935at7742.clustalo.trimal.fasta
+(user@host)-$ snakemake -rp --use-singularity \
+                 auto/trimmed/193525at7742.clustalo.trimal.fasta \
+                 auto/trimmed/406935at7742.clustalo.trimal.fasta
 ```
+
+See if you can get it run also for gene id `378120at7742`.
+
 
 ***TASK***
 > Try to extend the Snakefile to also include:
