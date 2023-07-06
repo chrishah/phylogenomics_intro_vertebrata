@@ -273,7 +273,7 @@ This will run for about 10 Minutes. You can check out the result `five_genes.tre
 (user@host)-$ cat five_genes.treefile #or try backup/five_genes.treefile instead if you had trouble
 ```
 
-Now, we can also try to build a speciestree from the 5 individual gene trees using ASTRAL. 
+Now, we can also try to build a speciestree from the 5 individual gene trees using [ASTRAL](https://github.com/smirarab/ASTRAL). 
 
 ***TASK***
 > First bring the individual gene trees together into one file. Let's call the file `trees.txt`.
