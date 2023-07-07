@@ -374,7 +374,7 @@ Create yourself a dag to see what the current status of the workflow is.
 (user@host)-$ snakemake -n --dag -s backup/Snakefile_with_ml_from_dir | dot -Tpdf > dag.with_ml_from_dir.pdf
 ```
 
-See <a href="https://github.com/chrishah/phylogenomics_intro_vertebrata/tree/main/backup/dag.with_ml_from_dir.pdf" title="Sample table" target="_blank">dag</a>).
+The result will look something like <a href="https://github.com/chrishah/phylogenomics_intro_vertebrata/tree/main/backup/dag.with_ml_from_dir.pdf" title="Sample table" target="_blank">this</a>.
 
 
 __6.) Full automation (OPTIONAL)__
