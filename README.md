@@ -342,7 +342,7 @@ Actually, running would happen if you remove the `-n` flag. Note that I've added
 
 Now try the following:
  - Check what happens if you run the above command once again.
- - remove the file `auto/aligned/406935at7742.clustalo.trimal.fasta` and rerun the command. Neat, no?
+ - remove the file `auto/trimmed/406935at7742.clustalo.trimal.fasta` and rerun the command. Neat, no?
 
 
 See if you can get it run also for gene id `378120at7742`.
@@ -369,6 +369,12 @@ Try it out:
                  -s backup/Snakefile_with_ml_from_dir
 ```
 
+Create yourself a dag to see what the current status of the workflow is.
+```bash
+(user@host)-$ snakemake -n --dag -s backup/Snakefile_with_ml_from_dir | dot -Tpdf > dag.with_ml_from_dir.pdf
+```
+
+See <a href="https://github.com/chrishah/phylogenomics_intro_vertebrata/tree/main/backup/dag.with_ml_from_dir.pdf" title="Sample table" target="_blank">dag</a>).
 
 
 __6.) Full automation (OPTIONAL)__
