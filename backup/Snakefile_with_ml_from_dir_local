@@ -9,7 +9,7 @@ rule supermatrix:
 		"super.from_dir.treefile"
 	singularity:
 		"~/Shared_folder/Singularity_images/iqtree_2.0.7.sif"
-	threads: 4
+	threads: 20
 	shell:
 		"""
 		iqtree -s auto/trimmed/ --prefix super.from_dir -m MFP --seqtype AA -T {threads} -bb 1000
