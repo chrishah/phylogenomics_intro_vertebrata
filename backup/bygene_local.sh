@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sif_file_path="/home/ubuntu/Share/Singularity_images"
+sif_file_path="~/Shared_folder/Singularity_images"
 
 for gene in $(echo "359032at7742 413149at7742 409719at7742 406935at7742")
 do

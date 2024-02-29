@@ -83,7 +83,7 @@ In order to identify a defined set of genes in all of our genomes we could use B
 ***Attention***
 > Since these genomes are relatively large BUSCO takes quite a while to run so this step has been already done for you.
 
-A reduced representation of the BUSCO results for each species ships with the repository in the directory `results/orthology/busco/busco_runs`.
+A reduced representation of the BUSCO results (reference BUSCO set 'vertebrata_odb10') for each species ships with the repository in the directory `results/orthology/busco/busco_runs`.
 
 Take a few minutes to explore the reports.
 
@@ -230,22 +230,34 @@ Now, let's say we want to go over these steps for multiple genes, say these:
  - 409719at7742
  - 406935at7742
 
-For loop would do the job, right? See the below code. Do you manage to add the tree inference step in, too? It's not in there yet.
+
+***TASK***
+> Create a script called `per_gene_inference.sh` for the purpose.
+
+For loop would do the job, right? See the below code as a template.
+ - adjust to use local singularity images instead of querying Dockerhub
+ - add in the tree inference step - make sure to organise the result as in the example above, i.e. make a directory `by_gene/phylogeny/<gene_id>` and run IQTree so that its results are placed there.
+ - run the script 
 
 ```bash
 #!/bin/bash
 for gene in $(echo "359032at7742 413149at7742 409719at7742 406935at7742")
 do
         echo -e "\n$(date)\t$gene"
+
         echo -e "$(date)\taligning"
         singularity exec docker://reslp/clustalo:1.2.4 clustalo -i by_gene/raw/${gene}_all.fas -o by_gene/aligned/${gene}.clustalo.fasta --threads=2
+
         echo -e "$(date)\ttrimming"
         singularity exec docker://reslp/trimal:1.4.1 trimal -in by_gene/aligned/${gene}.clustalo.fasta -out by_gene/trimmed/${gene}.clustalo.trimal.fasta -gappyout
+
+        echo -e "$(date)\ttree inference"
+	#your code here
+
         echo -e "$(date)\tDone"
 done
 ```
 
-__Prepare your code in a script `bygene.sh`.__
 
 A possible solution for the script (including the tree inference) can be found here: `backup/bygene.sh`, or if you'd been asked to use local singularity images check out the solution here: `backup/bygene_local.sh`.
 
