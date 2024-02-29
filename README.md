@@ -377,8 +377,14 @@ See if you can get it run also for gene id `378120at7742`.
 ***TASK***
 > Try to extend the Snakefile to also include:
  - per gene phylogenetic inference (see above)
- - supermatrix tree inference using the same 5 genes as before
+ - supermatrix tree inference using the following 5 genes
 
+Perform the analyses for the following genes:
+ - 409625at7742
+ - 409719at7742
+ - 413149at7742
+ - 42971at7742
+ - 97645at7742
 
 
 Have fun playing around with this for a while ;-)

@@ -5,7 +5,7 @@ rule align:
 	output:
 		"auto/aligned/{id}.clustalo.fasta"
 	singularity:
-		"~/Share/Singularity_images/clustalo_1.2.4.sif"
+		"~/Shared_folder/Singularity_images/clustalo_1.2.4.sif"
 	threads: 1
 	shell:
 		"""
@@ -17,7 +17,7 @@ rule trim:
 	output:
 		"auto/trimmed/{id}.clustalo.trimal.fasta"
 	singularity:
-		"~/Share/Singularity_images/trimal_1.4.1.sif"
+		"~/Shared_folder/Singularity_images/trimal_1.4.1.sif"
 	threads: 1
 	shell:
 		"""
