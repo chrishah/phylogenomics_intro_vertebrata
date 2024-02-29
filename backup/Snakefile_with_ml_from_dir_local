@@ -1,0 +1,61 @@
+import glob
+from os import path
+IDS=[ os.path.basename(x).split("_")[0] for x in glob.glob("by_gene/raw/*")]
+		"~/Shared_folder/Singularity_images/iqtree_2.0.7.sif"
+		"~/Shared_folder/Singularity_images/clustalo_1.2.4.sif"
+		"~/Shared_folder/Singularity_images/trimal_1.4.1.sif"
+		"~/Shared_folder/Singularity_images/iqtree_2.0.7.sif"
+
+rule supermatrix:
+	input:
+		expand("auto/phylogeny/{id}/{id}.treefile", id=IDS)
+	output:
+		"super.treefile"
+	singularity:
+		"~/Shared_folder/Singularity_images/iqtree_2.0.7.sif"
+	threads: 4
+	shell:
+		"""
+		iqtree -s auto/trimmed/ --prefix super -m MFP --seqtype AA -T {threads} -bb 1000
+
+		"""
+rule align:
+	input:
+		"by_gene/raw/{id}_all.fas"
+	output:
+		"auto/aligned/{id}.clustalo.fasta"
+	singularity:
+		"~/Shared_folder/Singularity_images/clustalo_1.2.4.sif"
+	threads: 1
+	shell:
+		"""
+		clustalo -i {input} -o {output} --threads={threads}
+		"""
+rule trim:
+	input:
+		"auto/aligned/{id}.clustalo.fasta"
+	output:
+		"auto/trimmed/{id}.clustalo.trimal.fasta"
+	singularity:
+		"~/Shared_folder/Singularity_images/trimal_1.4.1.sif"
+	threads: 1
+	shell:
+		"""
+		trimal -in {input} -out {output}
+		"""
+rule gene_tree:
+	input:
+		"auto/trimmed/{id}.clustalo.trimal.fasta"
+	output:
+		"auto/phylogeny/{id}/{id}.treefile"
+	singularity:
+		"~/Shared_folder/Singularity_images/iqtree_2.0.7.sif"
+	threads: 2
+	shell:
+		"""
+		iqtree \
+              -s {input} \
+              --prefix auto/phylogeny/{wildcards.id}/{wildcards.id} \
+              -m MFP --seqtype AA -T {threads} -bb 1000
+		"""
+

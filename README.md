@@ -394,17 +394,19 @@ Solutions can be found in these files:
  - `backup/Snakefile_with_ml`
 
 
-A Snakefile that would do the full analyses using all genes that are present in the directory `by_gene/raw/` can be found here: `backup/Snakefile_with_ml_from_dir`.
+A Snakefile that would do the full analyses using all genes that are present in the directory `by_gene/raw/` can be found here:
+ - `backup/Snakefile_with_ml_from_dir`
+ - `backup/Snakefile_with_ml_from_dir_local`
 
 Try it out:
 ```bash
 (user@host)-$ snakemake -n -rp --use-singularity \
-                 -s backup/Snakefile_with_ml_from_dir
+                 -s backup/Snakefile_with_ml_from_dir_local
 ```
 
 Create yourself a dag to see what the current status of the workflow is.
 ```bash
-(user@host)-$ snakemake -n --dag -s backup/Snakefile_with_ml_from_dir | dot -Tpdf > dag.with_ml_from_dir.pdf
+(user@host)-$ snakemake -n --dag -s backup/Snakefile_with_ml_from_dir_local | dot -Tpdf > dag.with_ml_from_dir.pdf
 ```
 
 The result will look something like <a href="https://github.com/chrishah/phylogenomics_intro_vertebrata/tree/main/backup/dag.with_ml_from_dir.pdf" title="Sample table" target="_blank">this</a>.
