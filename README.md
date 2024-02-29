@@ -61,6 +61,21 @@ We have compiled a list of published genomes that we will be including in our an
 
 To keep things clean I'd suggest to download each into a separate directory that should be named according to the binomial (connected with underscores, rather than spaces, see the first column of the file `data/samples.csv`), following the same logic as in the example for _L. chalumnae_ above.
 
+
+***TASK***
+> Try to download two more genomes, specifically the ones listed in the file `data/samples.exercise.csv`. Organize each of the two in its own directory as for _L. chalumnae_ above:
+ - create a directory with the species name as in column 1 of the file `data/samples.exercise.csv` in the assemblies directory
+ - change directory into this newly created directory
+ - download the genome using the url in the file (column 2)
+ - change directory back to your original starting place
+
+Ideally you could write a for loop to do it. A script that would achive this (for inspiration) can be found in `data/download_loop.sh`.
+
+Once you're done you can check what you have by finding all files that end in `*gz` in the assemblies directory:
+```bash
+(user@host)-$ find ./assemblies/ -name "*gz"
+```
+
 __2.) Run BUSCO on each assembly__
 
 In order to identify a defined set of genes in all of our genomes we could use BUSCO, i.e. run it on each of the downloaded genomes.
