@@ -410,6 +410,11 @@ Try it out:
                  -s backup/Snakefile_with_ml_from_dir_local
 ```
 
+If you were to run the above (not dry-run, i.e. remove the `-n` flag) it will take ~30 Minutes. The best tree will be written to a file called `super.from_dir.treefile`. If you didn't manage to run it but are still interested in the tree it ships with the repo here: `backup/super.from_dir.treefile`
+
+Check it out in [iTOL](https://itol.embl.de/upload.cgi). 
+
+
 Create yourself a dag to see what the current status of the workflow is.
 ```bash
 (user@host)-$ snakemake -n --dag -s backup/Snakefile_with_ml_from_dir_local | dot -Tpdf > dag.with_ml_from_dir.pdf
