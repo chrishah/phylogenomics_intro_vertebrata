@@ -362,7 +362,7 @@ Now, you could extend the analyses to further genes.
 
 Actually, running would happen if you remove the `-n` flag. Note that I've added another flag (`--use-singularity`) which tells snakemake to use containers for certain rules if so indicated in the `Snakefile`. 
 ```bash
-(user@host)-$ snakemake -rp --use-singularity \
+(user@host)-$ snakemake -rp --cores 2 --use-singularity \
                  auto/trimmed/193525at7742.clustalo.trimal.fasta \
                  auto/trimmed/406935at7742.clustalo.trimal.fasta
 ```
@@ -393,6 +393,12 @@ Solutions can be found in these files:
  - `backup/Snakefile_with_ml_local`
  - `backup/Snakefile_with_ml`
 
+The tree based on a supermatrix built from alignments of the above 5 genes also ships with the repository - see `backup/super.5.treefiles`.
+
+
+***TASK***
+> Finally, let's try adjust the Snakefile to automatically consider all alignments that are present in the directory `by_gene/raw`.
+
 
 A Snakefile that would do the full analyses using all genes that are present in the directory `by_gene/raw/` can be found here:
  - `backup/Snakefile_with_ml_from_dir`
@@ -400,7 +406,7 @@ A Snakefile that would do the full analyses using all genes that are present in 
 
 Try it out:
 ```bash
-(user@host)-$ snakemake -n -rp --use-singularity \
+(user@host)-$ snakemake -n --cores 2 -rp --use-singularity \
                  -s backup/Snakefile_with_ml_from_dir_local
 ```
 

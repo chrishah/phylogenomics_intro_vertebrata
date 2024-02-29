@@ -1,22 +1,18 @@
 import glob
 from os import path
 IDS=[ os.path.basename(x).split("_")[0] for x in glob.glob("by_gene/raw/*")]
-		"~/Shared_folder/Singularity_images/iqtree_2.0.7.sif"
-		"~/Shared_folder/Singularity_images/clustalo_1.2.4.sif"
-		"~/Shared_folder/Singularity_images/trimal_1.4.1.sif"
-		"~/Shared_folder/Singularity_images/iqtree_2.0.7.sif"
 
 rule supermatrix:
 	input:
 		expand("auto/phylogeny/{id}/{id}.treefile", id=IDS)
 	output:
-		"super.treefile"
+		"super.from_dir.treefile"
 	singularity:
 		"~/Shared_folder/Singularity_images/iqtree_2.0.7.sif"
 	threads: 4
 	shell:
 		"""
-		iqtree -s auto/trimmed/ --prefix super -m MFP --seqtype AA -T {threads} -bb 1000
+		iqtree -s auto/trimmed/ --prefix super.from_dir -m MFP --seqtype AA -T {threads} -bb 1000
 
 		"""
 rule align:

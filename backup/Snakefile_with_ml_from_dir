@@ -6,13 +6,13 @@ rule supermatrix:
 	input:
 		expand("auto/phylogeny/{id}/{id}.treefile", id=IDS)
 	output:
-		"super.treefile"
+		"super.from_dir.treefile"
 	singularity:
 		"docker://reslp/iqtree:2.0.7"
 	threads: 4
 	shell:
 		"""
-		iqtree -s auto/trimmed/ --prefix super -m MFP --seqtype AA -T {threads} -bb 1000
+		iqtree -s auto/trimmed/ --prefix super.from_dir -m MFP --seqtype AA -T {threads} -bb 1000
 
 		"""
 rule align:
