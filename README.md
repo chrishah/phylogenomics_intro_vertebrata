@@ -263,7 +263,7 @@ done
 ```
 
 
-A possible solution for the script (including the tree inference) can be found here: `backup/bygene_local.sh`. This one makes use of local images, assuming they are provided to you. Another version would here (`backup/bygene.sh`) would be more general and fetch the images from the cloud if not yet present.
+A possible solution for the script (including the tree inference) can be found here: `backup/bygene_local.sh`. This one makes use of local images, assuming they are provided to you. Another version here (`backup/bygene.sh`) would be more general and fetch the images from the cloud if not yet present.
 
 Run your script, e.g. like so:
 ```bash
