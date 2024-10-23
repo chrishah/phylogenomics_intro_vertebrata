@@ -352,7 +352,7 @@ In the Snakefile you'll see 'rules' (that's what individual steps in the analyse
 
 Spend some time to explore the file.
 
-Snakemake should be installed on your system - check back with your instructors if you're doing this as part of a course. An easy way to get it set up is through conda. If you haven't set it up yet, we provide some instructions [here](https://github.com/chrishah/phylogenomics_intro_vertebrata/tree/main/Snakemake_intro/README.md). 
+Snakemake should be installed on your system - check back with your instructors if you're doing this as part of a course. An easy way to get it set up is through conda. A conda envirnoment has most likely been set up for you, if you're doing this as part of a course. If you haven't set it up yet, we provide some instructions [here](https://github.com/chrishah/phylogenomics_intro_vertebrata/tree/main/Snakemake_intro/README.md). 
 
 Assuming you've set up a conda environment called `snakemake` (this will usually be the case if you do this as part of a course), in order to run Snakemake you first need to enter this environment.
 
