@@ -418,8 +418,8 @@ The tree based on a supermatrix built from alignments of the above 5 genes also 
 
 
 A Snakefile that would do the full analyses using all genes that are present in the directory `by_gene/raw/` can be found here:
- - `backup/Snakefile_with_ml_from_dir`
  - `backup/Snakefile_with_ml_from_dir_local`
+ - `backup/Snakefile_with_ml_from_dir`
 
 Try it out:
 ```bash
@@ -432,7 +432,7 @@ If you were to run the above (not dry-run, i.e. remove the `-n` flag) it will ta
 Check it out in [iTOL](https://itol.embl.de/upload.cgi). 
 
 
-Create yourself a dag to see what the current status of the workflow is.
+Create yourself a dag (directed acyclic graph) to see what the current status of the workflow is.
 ```bash
 (user@host)-$ snakemake -n --dag -s backup/Snakefile_with_ml_from_dir_local | dot -Tpdf > dag.with_ml_from_dir.pdf
 ```

@@ -6,7 +6,7 @@ rule supermatrix:
 	output:
 		"super.treefile"
 	singularity:
-		"~/Shared_folder/Singularity_images/iqtree_2.0.7.sif"
+		"~/Share/Singularity_images/iqtree_2.0.7.sif"
 	threads: 16
 	shell:
 		"""
@@ -19,7 +19,7 @@ rule align:
 	output:
 		"auto/aligned/{id}.clustalo.fasta"
 	singularity:
-		"~/Shared_folder/Singularity_images/clustalo_1.2.4.sif"
+		"~/Share/Singularity_images/clustalo_1.2.4.sif"
 	threads: 1
 	shell:
 		"""
@@ -31,7 +31,7 @@ rule trim:
 	output:
 		"auto/trimmed/{id}.clustalo.trimal.fasta"
 	singularity:
-		"~/Shared_folder/Singularity_images/trimal_1.4.1.sif"
+		"~/Share/Singularity_images/trimal_1.4.1.sif"
 	threads: 1
 	shell:
 		"""
@@ -43,7 +43,7 @@ rule gene_tree:
 	output:
 		"auto/phylogeny/{id}/{id}.treefile"
 	singularity:
-		"~/Shared_folder/Singularity_images/iqtree_2.0.7.sif"
+		"~/Share/Singularity_images/iqtree_2.0.7.sif"
 	threads: 8
 	shell:
 		"""
