@@ -87,6 +87,10 @@ A reduced representation of the BUSCO results (reference BUSCO set 'vertebrata_o
 
 Take a few minutes to explore the reports.
 
+***Challenge***
+> Find out how complete the coelacanth genome is according to the BUSCO assessment.
+
+
 __3.) Prefiltering of BUSCO groups__
 
 Now, assuming that we ran BUSCO across a number of genomes, we're going to select us a bunch of BUSCO genes to be included in our phylogenomic analyses. Let's get and overview.
