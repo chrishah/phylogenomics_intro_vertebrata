@@ -140,6 +140,16 @@ adjust to
 ```bash
 singularity exec ~/Share/Singularity_images/biopython_plus_1.77.sif ..
 ```
+
+Full list of local images that could be used to replace cloud images (in case they are provided to you):
+```bash
+docker://reslp/biopython_plus:1.77	->	~/Share/Singularity_images/biopython_plus_1.77.sif
+docker://reslp/clustalo:1.2.4	->	~/Share/Singularity_images/clustalo_1.2.4.sif
+docker://reslp/trimal:1.4.1	->	~/Share/Singularity_images/trimal_1.4.1.sif
+docker://reslp/iqtree:2.0.7	->	~/Share/Singularity_images/iqtree_2.0.7.sif
+docker://reslp/astral:5.7.1	->	~/Share/Singularity_images/astral_5.7.1.sif
+```
+
 ***Moving on..***
 
 Next, we'd want for example to identify all genes that are present in at least 20 of our 25 taxa and concatenate the sequences from each species into a single fasta file. We made a script for that - see below. __Please make sure to follow the instructions also with respect to creating new directories, when this is suggested!__.
