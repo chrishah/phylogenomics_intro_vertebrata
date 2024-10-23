@@ -88,7 +88,7 @@ A reduced representation of the BUSCO results (reference BUSCO set 'vertebrata_o
 Take a few minutes to explore the reports.
 
 ***Challenge***
-> Find out how complete the coelacanth genome is according to the BUSCO assessment.
+> Find out how complete the coelacanth (_Latimeria chalumnae_) genome is according to the BUSCO assessment.
 
 
 __3.) Prefiltering of BUSCO groups__
