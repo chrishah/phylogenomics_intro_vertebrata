@@ -263,12 +263,15 @@ done
 ```
 
 
-A possible solution for the script (including the tree inference) can be found here: `backup/bygene.sh`, or if you'd been asked to use local singularity images check out the solution here: `backup/bygene_local.sh`.
+A possible solution for the script (including the tree inference) can be found here: `backup/bygene_local.sh`. This one makes use of local images, assuming they are provided to you. Another version would here (`backup/bygene.sh`) would be more general and fetch the images from the cloud if not yet present.
 
 Run your script, e.g. like so:
 ```bash
-(user@host)-$ chmod a+x bygene.sh #make sure it's executable
-(user@host)-$ ./bygene.sh
+#########  in case you don't want to make your own script you can copy the one provided to you e.g.:
+(user@host)-$ cp backup/bygene_local.sh bygene.sh
+
+(user@host)-$ chmod a+x bygene.sh # make sure it's executable
+(user@host)-$ ./bygene.sh # execute the script
 
 ```
 
