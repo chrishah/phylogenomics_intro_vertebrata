@@ -138,7 +138,7 @@ singularity exec docker://reslp/biopython_plus:1.77 ..
 ```
 adjust to
 ```bash
-`singularity exec ~/Share/Singularity_images/biopython_plus_1.77.sif ..
+singularity exec ~/Share/Singularity_images/biopython_plus_1.77.sif ..
 ```
 ***Moving on..***
 
