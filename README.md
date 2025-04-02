@@ -175,9 +175,34 @@ docker://reslp/iqtree:2.0.7	->	~/Share/Singularity_images/iqtree_2.0.7.sif
 docker://reslp/astral:5.7.1	->	~/Share/Singularity_images/astral_5.7.1.sif
 ```
 
+
+
 </details>
 
 Next, we'd want for example to identify all genes that are present in at least 20 of our 25 taxa and concatenate the sequences from each species into a single fasta file. We made a script for that - see below. __Please make sure to follow the instructions also with respect to creating new directories, when this is suggested!__.
+
+```bash
+(user@host)-$ mkdir -p by_gene/raw
+(user@host)-$ singularity exec ~/Share/Singularity_images/biopython_plus_1.77.sif \
+              bin/create_sequence_files.py \
+              --busco_table busco_table.tsv \
+              --busco_results results/orthology/busco/busco_runs \
+              --cutoff 0.5 \
+              --outdir by_gene/raw \
+              --minsp 20 \
+              --type aa \
+              --gene_statistics gene_stats.txt \
+              --genome_statistics genome_statistics.txt 
+```
+
+
+<details>
+   <summary>
+
+   ### Version of command that will fetch image from Dockerhub (click text to see)
+
+   </summary>
+
 
 ```bash
 (user@host)-$ mkdir -p by_gene/raw
@@ -193,7 +218,15 @@ Next, we'd want for example to identify all genes that are present in at least 2
               --genome_statistics genome_statistics.txt 
 ```
 
-A bunch of files have been created in your current directory (`gene_stats.txt`) and also in the directory `by_gene/raw` (per gene `fasta` files).
+
+</details>
+
+
+A bunch of files have been created in your current directory (`gene_stats.txt`) and also in the directory `by_gene/raw` (per gene `fasta` files). Check it out:
+```bash
+(user@host)-$ ls -hrlt by_gene/raw/
+
+```
 
 __4.) For each BUSCO group__
 
