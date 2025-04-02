@@ -132,7 +132,7 @@ The resulting file `busco_table.tsv` can be found in your current directory.
 <details>
    <summary>
 
-   ### If you want to know how you can get local images to be used with Singularity - click here to unfold
+   ### Click here to unfold if you want to know how to get local images
 
    </summary>
 
