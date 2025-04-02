@@ -313,12 +313,32 @@ Now, let's infer a ML tree with [IQtree](http://www.iqtree.org/).
 ```bash
 #ML inference with IQTree
 (user@host)-$ mkdir -p by_gene/phylogeny/409625at7742
+(user@host)-$ singularity exec ~/Share/Singularity_images/iqtree_2.0.7.sif \
+              iqtree \
+              -s by_gene/trimmed/409625at7742.clustalo.trimal.fasta \
+              --prefix by_gene/phylogeny/409625at7742/409625at7742 \
+              -m MFP --seqtype AA -T 2 -bb 1000
+```
+
+<details>
+   <summary>
+
+   ### Version of command that will fetch image from Dockerhub (click text to see)
+
+   </summary>
+
+```bash
+#ML inference with IQTree
+(user@host)-$ mkdir -p by_gene/phylogeny/409625at7742
 (user@host)-$ singularity exec docker://reslp/iqtree:2.0.7 \
               iqtree \
               -s by_gene/trimmed/409625at7742.clustalo.trimal.fasta \
               --prefix by_gene/phylogeny/409625at7742/409625at7742 \
               -m MFP --seqtype AA -T 2 -bb 1000
 ```
+</details>
+
+
 
 The best scoring Maximum Likelihood tree can be found in the file: `by_gene/phylogeny/409625at7742/409625at7742.treefile`.
 
