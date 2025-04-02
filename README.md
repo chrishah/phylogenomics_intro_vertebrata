@@ -97,6 +97,10 @@ Now, assuming that we ran BUSCO across a number of genomes, we're going to selec
 
 We have a script to produce a matrix of presence/absence of BUSCO genes across multiple species. Let's try it out. In this tutorial we'll be using Docker containers through Singularity.
 
+***ATTENTION***
+> For all the commands that follow, there are two versions - 1) Singularity will make use of a local copy of the Docker image that may be provided to you if you're doing this as part of a course. 2) Instead of a local image, Singularity will query Dockerhub and download the image from the cloud. This is very convenient, but might in some instances take a bit of time. If you are doing this exercise as part of a course and the local images are provided for you we recommend to use this version.
+__Please wait here to get instructions.__
+
 ```bash
 (user@host)-$ singularity exec docker://reslp/biopython_plus:1.77 \
               bin/extract_busco_table.py \
@@ -105,11 +109,32 @@ We have a script to produce a matrix of presence/absence of BUSCO genes across m
               -o busco_table.tsv
 ```
 
+<details>
+   <summary>
+
+   ### Version of command that will fetch image from Dockerhub (click text to see)
+
+   </summary>
+
+```bash
+(user@host)-$ singularity exec docker://reslp/biopython_plus:1.77 \
+              bin/extract_busco_table.py \
+              --hmm results/orthology/busco/busco_set/vertebrata_odb10/hmms \
+              --busco_results results/orthology/busco/busco_runs/ \
+              -o busco_table.tsv
+```
+
+</details>
+
 The resulting file `busco_table.tsv` can be found in your current directory.
 
-***ATTENTION***
-> When calling singularity as above it will download the corresponding container from the cloud. This is very convenient, but might in some instances take a bit of time. If you are doing this exercise as part of a course you might be provided with local copies of the images to save some time. 
-__Please wait here to get instructions.__
+
+<details>
+   <summary>
+
+   ### If you want to know how you can get local images to be used with Singularity - click here to unfold
+
+   </summary>
 
 The following command would download the image and safe it to a local `*.sif` file.
 ```
@@ -150,7 +175,7 @@ docker://reslp/iqtree:2.0.7	->	~/Share/Singularity_images/iqtree_2.0.7.sif
 docker://reslp/astral:5.7.1	->	~/Share/Singularity_images/astral_5.7.1.sif
 ```
 
-***Moving on..***
+</details>
 
 Next, we'd want for example to identify all genes that are present in at least 20 of our 25 taxa and concatenate the sequences from each species into a single fasta file. We made a script for that - see below. __Please make sure to follow the instructions also with respect to creating new directories, when this is suggested!__.
 
@@ -386,7 +411,15 @@ Actually, running would happen if you remove the `-n` flag. Note that I've added
 
 Now try the following:
  - Check what happens if you run the above command once again.
- - remove the file `auto/trimmed/406935at7742.clustalo.trimal.fasta` and rerun the command. Neat, no?
+ - remove the file `auto/trimmed/406935at7742.clustalo.trimal.fasta`
+
+When you then rerun the previous dry-run command:
+```bash
+(user@host)-$ snakemake -n -rp \
+                 auto/trimmed/193525at7742.clustalo.trimal.fasta \
+                 auto/trimmed/406935at7742.clustalo.trimal.fasta
+```
+Snakemake will be smart enough to understand that certain parts were already run and figures out which part (one trimming job) it needs to run to finish all jobs, because the expected output file is missing (we just removed it). Neat, no?
 
 
 See if you can get it run also for gene id `378120at7742`.
