@@ -372,6 +372,32 @@ For loop would do the job, right? See the below code as a template.
  - add in the tree inference step - make sure to organise the result as in the example above, i.e. make a directory `by_gene/phylogeny/<gene_id>` and run IQTree so that its results are placed there.
  - run the script 
 
+
+```bash
+for gene in $(echo "359032at7742 413149at7742 409719at7742 406935at7742")
+do
+	echo -e "\n$(date)\t$gene"
+
+	echo -e "$(date)\taligning"
+	singularity exec ~/Share/Singularity_images/clustalo_1.2.4.sif clustalo -i by_gene/raw/${gene}_all.fas -o by_gene/aligned/${gene}.clustalo.fasta --threads=2
+
+	echo -e "$(date)\ttrimming"
+	singularity exec ~/Share/Singularity_images/trimal_1.4.1.sif trimal -in by_gene/aligned/${gene}.clustalo.fasta -out by_gene/trimmed/${gene}.clustalo.trimal.fasta -gappyout
+
+	echo -e "$(date)\ttree inference"
+	#your code here
+
+	echo -e "$(date)\tDone"
+done
+```
+
+<details>
+   <summary>
+
+   ### Version of command that will fetch image from Dockerhub (click text to see)
+
+   </summary>
+
 ```bash
 #!/bin/bash
 for gene in $(echo "359032at7742 413149at7742 409719at7742 406935at7742")
@@ -390,6 +416,7 @@ do
         echo -e "$(date)\tDone"
 done
 ```
+</details>
 
 
 A possible solution for the script (including the tree inference) can be found here: `backup/bygene_local.sh`. This one makes use of local images, assuming they are provided to you. Another version here (`backup/bygene.sh`) would be more general and fetch the images from the cloud if not yet present.
