@@ -241,12 +241,32 @@ Perform multiple sequence alignment with [clustalo](http://www.clustal.org/omega
 ```bash
 #alignment with clustalo
 (user@host)-$ mkdir by_gene/aligned
+(user@host)-$ singularity exec ~/Share/Singularity_images/clustalo_1.2.4.sif \
+              clustalo \
+              -i by_gene/raw/409625at7742_all.fas \
+              -o by_gene/aligned/409625at7742.clustalo.fasta \
+              --threads=2
+```
+
+<details>
+   <summary>
+
+   ### Version of command that will fetch image from Dockerhub (click text to see)
+
+   </summary>
+
+```bash
+#alignment with clustalo
+(user@host)-$ mkdir by_gene/aligned
 (user@host)-$ singularity exec docker://reslp/clustalo:1.2.4 \
               clustalo \
               -i by_gene/raw/409625at7742_all.fas \
               -o by_gene/aligned/409625at7742.clustalo.fasta \
               --threads=2
 ```
+
+</details>
+
 
 We can then look at the alignment result (`by_gene/aligned/409625at7742.clustalo.fasta`). There is a number of programs available to do that, e.g. MEGA, Jalview, Aliview, or you can do it online. A link to the upload client for the NCBI Multiple Sequence Alignment Viewer is [here](https://www.ncbi.nlm.nih.gov/projects/msaviewer/?appname=ncbi_msav&openuploaddialog) (I suggest to open in new tab). Download the alignment (`by_gene/aligned/409625at7742.clustalo.fasta`) to your local computer, upload the file to the online tool, press 'Close' button, and have a look.
 
