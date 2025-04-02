@@ -447,6 +447,8 @@ by_gene/phylogeny/409719at7742/409719at7742.treefile
 by_gene/phylogeny/413149at7742/413149at7742.treefile
 ```
 
+__Infer ML tree using 5 genes__
+
 Now, then, let's infer a ML tree using a supermatrix of all 5 genes that we have processed so far. Conveniently, you'll just need to point IQtree onto a directory that contains multiple alignments and it will do the rest. In our case we use the trimmed alignments. Be aware, though, that in order for IQtree to be able to match up the right sequences in the supermatrix you're going to have to use the same names in all individual alignment files.
 
 ```bash
@@ -476,9 +478,12 @@ Now, then, let's infer a ML tree using a supermatrix of all 5 genes that we have
 
 This will run for about 10 Minutes. You can check out the result `five_genes.treefile`, once it's done.
 
+
 ```bash
 (user@host)-$ cat five_genes.treefile #or try backup/five_genes.treefile instead if you had trouble
 ```
+
+__Infer a species tree__
 
 Now, we can also try to build a speciestree from the 5 individual gene trees using [ASTRAL](https://github.com/smirarab/ASTRAL). 
 
