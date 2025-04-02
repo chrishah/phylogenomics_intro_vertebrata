@@ -102,7 +102,7 @@ We have a script to produce a matrix of presence/absence of BUSCO genes across m
 __Please wait here to get instructions.__
 
 ```bash
-(user@host)-$ singularity exec docker://reslp/biopython_plus:1.77 \
+(user@host)-$ singularity exec ~/Share/Singularity_images/biopython_plus_1.77.sif \
               bin/extract_busco_table.py \
               --hmm results/orthology/busco/busco_set/vertebrata_odb10/hmms \
               --busco_results results/orthology/busco/busco_runs/ \
