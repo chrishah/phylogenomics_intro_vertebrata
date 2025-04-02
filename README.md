@@ -450,12 +450,29 @@ by_gene/phylogeny/413149at7742/413149at7742.treefile
 Now, then, let's infer a ML tree using a supermatrix of all 5 genes that we have processed so far. Conveniently, you'll just need to point IQtree onto a directory that contains multiple alignments and it will do the rest. In our case we use the trimmed alignments. Be aware, though, that in order for IQtree to be able to match up the right sequences in the supermatrix you're going to have to use the same names in all individual alignment files.
 
 ```bash
+(user@host)-$ singularity exec ~/Share/Singularity_images/iqtree_2.0.7.sif \
+              iqtree \
+              -s by_gene/trimmed/ \
+              --prefix five_genes \
+              -m MFP --seqtype AA -T 2 -bb 1000 
+```
+
+<details>
+   <summary>
+
+   ### Version of command that will fetch image from Dockerhub (click text to see)
+
+   </summary>
+
+```bash
 (user@host)-$ singularity exec docker://reslp/iqtree:2.0.7 \
               iqtree \
               -s by_gene/trimmed/ \
               --prefix five_genes \
               -m MFP --seqtype AA -T 2 -bb 1000 
 ```
+
+</details>
 
 This will run for about 10 Minutes. You can check out the result `five_genes.treefile`, once it's done.
 
