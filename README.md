@@ -277,12 +277,33 @@ Let's move on to score and filter the alignment, using [TrimAl](https://vicfero.
 ```bash
 #alignment trimming with trimal
 (user@host)-$ mkdir by_gene/trimmed
+(user@host)-$ singularity exec ~/Share/Singularity_images/trimal_1.4.1.sif \
+              trimal \
+              -in by_gene/aligned/409625at7742.clustalo.fasta \
+              -out by_gene/trimmed/409625at7742.clustalo.trimal.fasta \
+              -gappyout
+```
+
+
+<details>
+   <summary>
+
+   ### Version of command that will fetch image from Dockerhub (click text to see)
+
+   </summary>
+
+```bash
+#alignment trimming with trimal
+(user@host)-$ mkdir by_gene/trimmed
 (user@host)-$ singularity exec docker://reslp/trimal:1.4.1 \
               trimal \
               -in by_gene/aligned/409625at7742.clustalo.fasta \
               -out by_gene/trimmed/409625at7742.clustalo.trimal.fasta \
               -gappyout
 ```
+
+</details>
+
 
 Try open the upload [dialog](https://www.ncbi.nlm.nih.gov/projects/msaviewer/?appname=ncbi_msav&openuploaddialog) for the Alignment viewer in a new tab and upload the new file (`by_gene/trimmed/409625at7742.clustalo.trimal.fasta`).
 What do you think? The algorithm has removed quite a bit at the ends of the original alignment, reducing it to only ~100 positions, but these look mostly ok, at first glance.
