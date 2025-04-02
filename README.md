@@ -493,7 +493,7 @@ Now, we can also try to build a speciestree from the 5 individual gene trees usi
 Then run ASTRAL.
 
 ```bash
-(user@host)-$ singularity exec docker://reslp/astral:5.7.1 \
+(user@host)-$ singularity exec ~/Share/Singularity_images/astral_5.7.1.sif \
                java -jar /ASTRAL-5.7.1/Astral/astral.5.7.1.jar \
                -i trees.txt -o species_tree.astral.tre 
 ```
