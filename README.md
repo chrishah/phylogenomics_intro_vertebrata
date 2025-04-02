@@ -486,11 +486,27 @@ Now, we can also try to build a speciestree from the 5 individual gene trees usi
 > First bring the individual gene trees together into one file. Let's call the file `trees.txt`.
 
 Then run ASTRAL.
+
 ```bash
 (user@host)-$ singularity exec docker://reslp/astral:5.7.1 \
                java -jar /ASTRAL-5.7.1/Astral/astral.5.7.1.jar \
                -i trees.txt -o species_tree.astral.tre 
 ```
+
+<details>
+   <summary>
+
+   ### Version of command that will fetch image from Dockerhub (click text to see)
+
+   </summary>
+
+```bash
+(user@host)-$ singularity exec docker://reslp/astral:5.7.1 \
+               java -jar /ASTRAL-5.7.1/Astral/astral.5.7.1.jar \
+               -i trees.txt -o species_tree.astral.tre 
+```
+</details>
+
 Have a look at the result.
 ```bash
 (user@host)-$ cat species_tree.astral.tre #or try backup/species_tree.astral.tre instead if you had trouble
