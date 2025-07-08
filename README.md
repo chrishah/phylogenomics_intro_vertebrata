@@ -239,7 +239,21 @@ For each of the BUSCOs that passed we want to:
 
 Let's go over a possible solution step by step for gene: `409625at7742`.
 
-Perform multiple sequence alignment with [clustalo](http://www.clustal.org/omega/).
+Before we start, the directory `by_gene/raw` should contain several fasta files with protein sequences - check it out:
+```bash
+(user@host)-$ ls by_gene/raw
+193525at7742_all.fas  353318at7742_all.fas  403632at7742_all.fas  409719at7742_all.fas
+332227at7742_all.fas  359032at7742_all.fas  404316at7742_all.fas  413149at7742_all.fas
+33940at7742_all.fas   361842at7742_all.fas  406935at7742_all.fas  42971at7742_all.fas
+342641at7742_all.fas  378120at7742_all.fas  409625at7742_all.fas  97645at7742_all.fas
+```
+
+If this is not the case, maybe you just skipped into this section without doing all the steps above, you can bring yourself up to speed with the following command (which will put in place all relevant files):
+```bash
+(user@host)-$ rsync -avpuzP --relative backup/./by_gene/raw .
+```
+
+Now, perform multiple sequence alignment with [clustalo](http://www.clustal.org/omega/). Clustalo will be run in a container, so it won't have to be installed locally. Below are two versions of how to run it using a) a local image that may be provided for you in a shared directory, or b) using an image that is deposited on Dockerhub (unfold by clicking on the arrow).
 ```bash
 #alignment with clustalo
 (user@host)-$ mkdir by_gene/aligned
