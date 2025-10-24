@@ -646,6 +646,8 @@ Create yourself a dag (directed acyclic graph) to see what the current status of
 
 The result will look something like <a href="https://github.com/chrishah/phylogenomics_intro_vertebrata/tree/main/backup/dag.with_ml_from_dir.pdf" title="Sample table" target="_blank">this</a>.
 
+![](backup/dag.with_ml_from_dir.pdf)
+
 
 __6.) Full automation (OPTIONAL)__
 
