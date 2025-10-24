@@ -4,7 +4,7 @@ Phylogenomics tutorial based on BUSCO genes
 Github URL: [https://github.com/chrishah/phylogenomics_intro_vertebrata](https://github.com/chrishah/phylogenomics_intro_vertebrata) 
 
 ***Disclaimer***
-To follow the demo and make the most of it, it helps if you have some basic skills with running software tools and manipulating files using the Unix shell command line. It assumes you have Docker installed on your computer (tested with Docker version 18.09.7, build 2d0083d; on Ubuntu 18.04).
+To follow the demo and make the most of it, it helps if you have some basic skills with running software tools and manipulating files using the Unix shell command line. It assumes you have Singularity (tested with version 3.6.3) or Docker installed on your computer (tested with Docker version 27.4.1, build b9d17ea; on Ubuntu 24.04).
 
 ## Introduction
 
@@ -554,11 +554,12 @@ Spend some time to explore the file.
 
 Snakemake should be installed on your system - check back with your instructors if you're doing this as part of a course. An easy way to get it set up is through conda. A conda envirnoment has most likely been set up for you, if you're doing this as part of a course. If you haven't set it up yet, we provide some instructions [here](https://github.com/chrishah/phylogenomics_intro_vertebrata/tree/main/Snakemake_intro/README.md). 
 
-Assuming you've set up a conda environment called `snakemake` (this will usually be the case if you do this as part of a course), in order to run Snakemake you first need to enter this environment.
+Assuming you've set up a conda environment called `snakemake` (this will usually be the case if you do this as part of a course), in order to run Snakemake you first need to enter this environment. The following was tested with Snakemake version 6.0.2. No warranty for later Snakemake versions. If you run a newer version of Snakemake minor changes may have to be made to the Snakefiles.
 
 ```bash
 (user@host)-$ conda activate snakemake
-(snakemake) (user@host)-$ snakemake -h
+(snakemake) (user@host)-$ snakemake --version
+6.0.2
 ```
 
 Now, let's try to do a Snakemake 'dry-run', providing a specific target file and see what happens. You'll first need to put a file called `Snakefile` in place - this is the default expectation of Snakemake.
